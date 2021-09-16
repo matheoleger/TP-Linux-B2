@@ -18,3 +18,11 @@ Lien de la documentation source: https://fr.wikipedia.org/wiki/PHP
 > PHP: **Hypertext Preprocessor**, plus connu sous son sigle **PHP** (sigle auto-référentiel), est un langage de programmation libre, **principalement utilisé** pour produire des **pages Web dynamiques via un serveur HTTP**, mais pouvant également fonctionner comme n'importe quel langage interprété de façon locale. PHP est un langage impératif **orienté objet**. 
 
 **Pour résumé :** *PHP est un langage de programmation qui est souvent utilisé pour créer des pages Web*
+
+## MariaDB
+
+Lien de la documentation source: https://fr.wikipedia.org/wiki/MariaDB
+
+> MariaDB est un **système de gestion de base de données** édité sous licence GPL. Il s'agit d'un **fork communautaire de MySQL** : la gouvernance du projet est assurée par la fondation **MariaDB**, et sa maintenance par la société **Monty Program AB**, créateur du projet. Cette gouvernance confère au logiciel l’assurance de rester libre. 
+
+**Pour résumé :** *MariaDB est un fork communautaire de MySQL, c'est un système de gestion de base de données.*
