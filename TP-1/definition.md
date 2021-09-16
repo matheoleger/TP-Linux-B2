@@ -36,3 +36,13 @@ Lien de la documentation source: https://fr.wikipedia.org/wiki/Gestionnaire_Libr
 > GLPI est une application web qui aide les entreprises à gérer leur système d’information. Parmi ses caractéristiques, cette solution est capable de construire un inventaire de toutes les ressources de la société et de réaliser la gestion des tâches administratives et financières.
 
 **Pour résumer :** *GLPI est un logiciel de gestion des services informatiques et de gestion des services d'assistance.*
+
+## Crontab
+
+Lien de la documentation source: https://www.linuxtricks.fr/wiki/cron-et-crontab-le-planificateur-de-taches
+
+> Crontab est un outil qui permet de lancer des applications de façon régulière, pratique pour un serveur pour y lancer des scripts de sauvegardes, etc.
+
+Pour résumer : *Crontab est un outil qui va permettre d'éxecuter des commandes / des scripts de manière récurente.*
+
+Pour en savoir plus sur ``crontab``, redirigez vous vers la partie [Mettre en place une sauvegarde de GLPI](./)
