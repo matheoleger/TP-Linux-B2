@@ -1,4 +1,4 @@
-# :computer: Linux – Services réseaux
+# :penguin: Linux – Services réseaux
 
 ## :clipboard: Consigne :
 #### Le sujet répond à un objectif, accompagner le client dans la configuration de son infrastructure.
