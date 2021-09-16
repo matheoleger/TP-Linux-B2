@@ -1,10 +1,10 @@
-# :floppy_disk: TP n°1 :
+# :building_construction: TP n°1 :
 
-## Sommaire du TP n°1 :
+## Sommaire du *TP n°1* :
 
 - [Mise en place d'une machine virtuelle et configuration des services réseaux](./main_page.md#desktop_computer-mise-en-place-dune-machine-virtuelle)
-- [Configuration d'un outil de gestion de ticket](./main_page.md#Configuration-dun-outil-de-gestion-de-ticket)
-- Ajout au serveur, d'un plugin de remontée de poste client pour pouvoir réaliser l’inventaire du parc 
+- [Configuration d'un outil de gestion de ticket](./main_page.md#ticket-configuration-dun-outil-de-gestion-de-ticket)
+- [Ajout au serveur, d'un plugin de remontée de poste client pour pouvoir réaliser l’inventaire du parc](./main_page.md#)
 - Mise en place d'un poste client Windows 10 et remonter le poste client dans l’inventaire GLPI
 - Mise en place d'une sauvegarde de GLPI
 
@@ -78,7 +78,7 @@ De la machine virtuelle (sous Windows) vers la machine virtuelle (sous Debian) :
 
 Tout fonctionne.
 
-### Accès à internet
+### :electric_plug: Accès à internet
 
 Dans notre cas, on n'a pas eu besoin de configurer quelque chose pour que cela fonctionne. En effet, le DNS a été configuré automatiquement pour les 2 VMs :
 
@@ -92,7 +92,7 @@ Mais dans le cas où internet ne marcherait pas, alors il faut configurer le DNS
 
 Pour la VM Windows il faut aller dans `Centre Réseaux et Partages > (le nom du réseau) > Propriétés` puis il faut cliquer sur ``TCP/IPv4`` et sur `Propriétés`
 
-### Le SSH
+### :electric_plug: Le SSH
 
 Afin de rendre la configuration des outils (FusionInventory et GLPI) plus simple, on a installé ``openSSH`` afin de pouvoir acceder au serveur via notre machine hôte (machine sur laquelle on faisait les recherches pour configurer le serveur). 
 
@@ -108,11 +108,13 @@ Une fois ceci fait, on peut directement acceder au shell via une autre machine.
 
 Comme on peut le voir ci-dessus, on utilise la commande `ssh username@ipadress` (le `username` correspond au nom de l'utilisateur du serveur auquel on veut acceder et `ipadress` c'est l'adresse de la machine serveur)
 
-## Configuration d'un outil de gestion de ticket
+## :ticket: Configuration d'un outil de gestion de ticket
+
+> :bulb: Afin de réaliser cette partie, j'ai suivi le cours suivant : https://openclassrooms.com/fr/courses/1730516-gerez-votre-parc-informatique-avec-glpi/5993816-installez-votre-serveur-glpi
 
 > :bulb: Pour exécuter les commandes suivantes, il faut soit se mettre en ``root``, soit ajouter `sudo` au début de chaque commande.
 
-### Les prérequis
+### :floppy_disk: Les prérequis
 
 Tout d'abord, il faut mettre à jour la liste des paquets
 
@@ -190,9 +192,9 @@ Un menu va s'ouvrir, il faut choisir *Apache2* puis répondre *NON* à la demand
 
 Tout ce qu'on a fait jusque là, à permit de créer un serveur de type ***LAMP*** (Linux Apache MySQL PHP).
 
-### Installation de GLPI
+### :tickets: Installation et configuration de GLPI
 
-L'installation de GLPI se fait en 2 temps, par ligne de commande puis par interface graphique.
+L'installation de [GLPI](./definition.md#glpi) se fait en 2 temps, par ligne de commande puis par interface graphique.
 
 Dans un premier temps, on va récupérer les **paquets GLPI** :
 ```sh
@@ -212,7 +214,7 @@ Maintenant, on peut passer à l'installation via l'interface graphique (web).
 
 Pour y accéder, il faut ouvrir dans le navigateur, l'interface web se trouvant à l'adresse de `http://<adresse_ip_du_serveur>/glpi`.
 
-> :warning: L'adresse Ipv4 utilisée ici, est différente de celle utilisée lors des test de ``ping`` (voir [plus haut](./main_page#configuration-réseau)). En effet, l'installation / configuration ont été fait sur un autre réseau.
+> :warning: L'adresse Ipv4 utilisée ici, est différente de celle utilisée lors des test de ``ping`` (voir [plus haut](./main_page#electric_plug-configuration-réseau)). En effet, l'installation / configuration ont été fait sur un autre réseau.
 
 Ici, se sera `http://192.168.191.17/glpi`, ce qui ouvrira :
 
@@ -248,31 +250,90 @@ apt-get install php-simplexml
 ```
 > :bulb: Au moment d'appuyer sur le bouton *Réessayer*, il pourrait y avoir aucun changement. Pour ce faire, il faut recharger le serveur Apache2 soit en faisant : `sudo service apache2 restart` soit en refaisant la commande `/etc/init.d/apache2 restart`
 
+Pour la dernière erreur, d'après le cours sur [OpenClassroom](https://openclassrooms.com/fr/courses/1730516-gerez-votre-parc-informatique-avec-glpi/5993816-installez-votre-serveur-glpi#/id/r-5994042) :
+
+> Concernant la dernière erreur, c’est une alerte de sécurité qui informe qu’en tapant le nom des sous-répertoires dans l’URL du site, on a la possibilité de naviguer dans les fichiers via l’interface web ; ce qui est, vous vous en doutez, une faille de sécurité. Pour notre serveur d’essais, ça n’a pas d’importance, mais en production vous devrez verrouiller les sous-répertoires en y ajoutant un fichier .htaccess.
+
+On peut donc appuyer sur *Continuer*.
+
+Puis on arrive sur la page suivante, où il faut rentrer les informations comme ceci :
+- serveur SQL : `localhost`
+- utilisateur SQL : `glpiuser`
+- mot de passe SQL : `<mot de passe vu précedemment>`
+
+![glpiinstall3](./img/configuration_GLPI/installation/2021-09-14-152230.jpg)
+
+Après avoir cliquer sur *Continuer*, on arrive sur la page où il faut choisir la base de données. Il faut choisir celle qu'on a créé précédemment : ``glpidb``.
+
+Puis on peut appuyer sur *Continuer* (:warning: il est important de ne pas appuyer plusieurs fois sur *Continuer* au risque de créer des problèmes).
+
+![glpiinstall4](./img/configuration_GLPI/installation/2021-09-14-152401.jpg)
+
+Si tout est bon, on a cette page qui s'affiche : 
+
+![glpiinstall4](./img/configuration_GLPI/installation/2021-09-14-152549.jpg)
+
+On peut appuyer sur *Continuer*.
+
+Pour les étapes 4 et 5, ce ne sont pas des choix importants.
+
+L'étape 6, en revanche, est importante car elle nous donne les identifiants et les mots de passe par défauts de GLPI.
+Il faut donc tout garder : 
+
+![glpiinstall4](./img/configuration_GLPI/installation/2021-09-14-152818.jpg)
+
+On peut donc maintenant se connecter à *GLPI* :
+
+![glpiinstall4](./img/configuration_GLPI/installation/2021-09-14-153820.jpg)
 
 
+## :clipboard: Ajout au serveur, d'un plugin de remontée de poste client pour pouvoir réaliser l’inventaire du parc.
 
+> :bulb: Afin de réaliser cette partie, j'ai suivi le cours suivant : https://openclassrooms.com/fr/courses/1730516-gerez-votre-parc-informatique-avec-glpi/5994176-installez-le-plugin-et-l-agent-fusioninventory
 
+> :bulb: Pour exécuter les commandes suivantes, il faut soit se mettre en ``root``, soit ajouter `sudo` au début de chaque commande.
 
+### Installer et configurer le plugin Fusion Inventory
 
+Tout d'abord, il est important de savoir quelle version utiliser avec la version de GLPI. Pour ce faire, on peut regarder sur le site http://fusioninventory.org/
 
+Dans notre cas, on utilise la *version 9.3+1.4* de FusionInventory.
 
+On peut remettre à jour la liste des paquets :
 
+```sh
+apt-get update && apt-get upgrade
+```
 
+Puis on peut télécharger le plugin :
 
+```sh
+cd /usr/src
+wget https://github.com/fusioninventory/fusioninventory-for-glpi/archive/glpi9.3+1.4.tar.gz
+tar -zxvf glpi9.3+1.3.tar.gz -C /var/www/html/glpi/plugins 
+```
 
+Explication des lignes ci-dessus :
+- La première commande nous permet d'aller dans le répertoire `usr/src`.
+- La deuxième commande nous permet de récupérer le plugin fusionInventory.
+- La troisième commande nous permet d'extraire l'archive précédemment récupérée.
 
+Comme vu précédemment, il faut donner les droits au serveur :
 
+```sh
+chown -R www-data /var/www/html/glpi/plugins
+```
 
+Et afin d'éviter des erreurs avec GLPI, on va renommer le dossier du fusionInventory :
 
+```sh
+cd /var/www/html/glpi/plugins
+mv fusioninventory-for-glpi-glpi9.3-1.3/ fusioninventory/
+```
 
+Maintenant, on peut retourner sur l'interface web.
 
-
-
-
-
-
-
-
+![glpiinstall4](./img/configuration_GLPI/installation/2021-09-14-153820.jpg)
 
 
 
