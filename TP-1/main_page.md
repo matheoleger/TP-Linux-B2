@@ -4,8 +4,8 @@
 
 - [Mise en place d'une machine virtuelle et configuration des services réseaux](./main_page.md#desktop_computer-mise-en-place-dune-machine-virtuelle)
 - [Configuration d'un outil de gestion de ticket](./main_page.md#ticket-configuration-dun-outil-de-gestion-de-ticket)
-- [Ajout au serveur, d'un plugin de remontée de poste client pour pouvoir réaliser l’inventaire du parc](./main_page.md#)
-- Mise en place d'un poste client Windows 10 et remonter le poste client dans l’inventaire GLPI
+- [Ajout au serveur, d'un plugin de remontée de poste client pour pouvoir réaliser l’inventaire du parc](./main_page.md#ajout-au-serveur-d-un-plugin-de-remontée-de-poste-client-pour-pouvoir-réaliser-linventaire-du-parc)
+- [Mise en place d'un poste client Windows 10 et remonter le poste client dans l’inventaire GLPI](./main_page.md#mise-en-place-dun-poste-client-Windows-10-et-remonter-le-poste-client-dans-linventaire-GLPI)
 - Mise en place d'une sauvegarde de GLPI
 
 ---
@@ -100,7 +100,7 @@ Afin de rendre la configuration des outils (FusionInventory et GLPI) plus simple
 
 Pour ce faire, il faut simplement installer le package openssh-server sur notre machine serveur :
 ```bash
-matheoleger@debianmatheo sudo apt install openssh-server 
+matheoleger@debianmatheo:~$ sudo apt install openssh-server 
 ```
 Une fois ceci fait, on peut directement acceder au shell via une autre machine.
 
@@ -315,7 +315,7 @@ Puis on peut télécharger le plugin :
 ```sh
 cd /usr/src
 wget https://github.com/fusioninventory/fusioninventory-for-glpi/archive/glpi9.3+1.4.tar.gz
-tar -zxvf glpi9.3+1.3.tar.gz -C /var/www/html/glpi/plugins 
+tar -zxvf glpi9.3+1.4.tar.gz -C /var/www/html/glpi/plugins 
 ```
 
 Explication des lignes ci-dessus :
@@ -333,7 +333,7 @@ Et afin d'éviter des erreurs avec GLPI, on va renommer le dossier du fusionInve
 
 ```sh
 cd /var/www/html/glpi/plugins
-mv fusioninventory-for-glpi-glpi9.3-1.3/ fusioninventory/
+mv fusioninventory-for-glpi-glpi9.3-1.4/ fusioninventory/
 ```
 
 Maintenant, on peut retourner sur l'interface web, en utilisant l'utilisateur administrateur.
@@ -393,6 +393,56 @@ Et on aura donc régler le problème du `crontab`.
 ---
 
 ## :desktop_computer: Mise en place d'un poste client Windows 10 et remonter le poste client dans l’inventaire GLPI
+
+> :bulb: Comme dit précédemment, une machine virtuelle a été installé comme client. 
+
+> :bulb: Afin de réaliser cette partie, j'ai suivi le cours de OpenClassroom : https://openclassrooms.com/fr/courses/1730516-gerez-votre-parc-informatique-avec-glpi/5994176-installez-le-plugin-et-l-agent-fusioninventory#/id/r-6150440
+
+### Installation et configuration de FusionInventory Agent
+
+FusionInventory Agent s'installe sur les machines clients.
+
+:bulb: Il permet de faire l'inventaire de notre parc informatique (il va donc afficher la machine client ayant installer l'agent)
+
+Après avoir choisi la version correspondante à ma VM, on commence l'installation.
+
+Il faut suivre les étapes d'installation jusqu'à ce qu'on arrive ici :
+
+![agent](./img/configuration_fusion/agent/2021-09-14-162517.jpg)
+
+Il faut choisir une installation complète afin d'avoir tous les composants.
+
+On continue les étapes (choisir le chemin d'installation), puis on arrive sur une étape importante :
+
+![agent](./img/configuration_fusion/agent/2021-09-14-163049.jpg)
+
+C'est une étape très importante. Il faut donc mettre l'adresse comme ceci :
+
+```txt
+http://<adresse_ip_du_serveur>/glpi/plugins/fusioninventory/
+```
+
+Cela permet à l'agent fusionInventory d'envoyer son inventaire au serveur.
+
+Une fois cette étape fait, il faut continuer en faisant une installation rapide.
+
+On peut maintenant tester FusionInventory en ouvrant un navigateur web et en mettant dans l'adresse : `http://localhost:62354` ou `http://127.0.0.1:62354`.
+
+On devrait arriver sur cette page :
+
+![agent](./img/configuration_fusion/agent/2021-09-14-163342.jpg)
+
+On peut maintenant cliquer sur *force an inventory*, ce qui va envoyer l'inventaire.
+
+Maintenant, on peut voir sur l'interface web de **GLPI**, dans la catégorie  *Administration > FusionInventory*, qu'il y a bien un Agent de déployer :
+
+![agent](./img/configuration_fusion/agent/2021-09-14-163703.jpg)
+
+On peut aussi voir dans le sous-menu *Général > Gestion des agents*, qu'il y a bien l'agent déployer précédemment :
+
+![agent](./img/configuration_fusion/agent/2021-09-14-163742.jpg)
+
+
 
 
 

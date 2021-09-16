@@ -37,6 +37,12 @@ Lien de la documentation source: https://fr.wikipedia.org/wiki/Gestionnaire_Libr
 
 **Pour résumer :** *GLPI est un logiciel de gestion des services informatiques et de gestion des services d'assistance.*
 
+## FusionInventory
+
+Lien de la documentation source: https://fr.wikipedia.org/wiki/FusionInventory
+
+> FusionInventory est un logiciel servant à l'inventaire et la maintenance d'un parc informatique à l'aide d'autres logiciels de ce type tels que GLPI ou OCS Inventory. 
+
 ## Crontab
 
 Lien de la documentation source: https://www.linuxtricks.fr/wiki/cron-et-crontab-le-planificateur-de-taches
