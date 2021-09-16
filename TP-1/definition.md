@@ -51,4 +51,56 @@ Lien de la documentation source: https://www.linuxtricks.fr/wiki/cron-et-crontab
 
 Pour résumer : *Crontab est un outil qui va permettre d'éxecuter des commandes / des scripts de manière récurente.*
 
-Pour en savoir plus sur ``crontab``, redirigez vous vers la partie [Mettre en place une sauvegarde de GLPI](./)
+Afin d'éditer un fichier ``crontab``, on fait la commande :
+
+```sh
+crontab -e
+```
+
+Ceci ouvrira un fichier dans lequel on peut écrire. Il faudra ici écrire l'action à faire, et quand la faire.
+
+Le ``crontab`` est dépendant à chaque utilisateur. Si on veut ouvrir un *cron* en tant que administrateur, on fait :
+
+```sh
+sudo crontab -e
+```
+
+Il existe plusieurs options à la commande :
+
+- Pour **supprimer** un *crontab*
+
+    ```sh
+    crontab -r
+    ```
+- Pour **supprimer** un *crontab* mais avec demande de confirmation
+
+    ```sh
+    crontab -i
+    ```
+- Pour **afficher** le contenu d'un *crontab* (elle permet aussi de voir s'il existe un crontab pour un utilisateur)
+
+    ```sh
+    crontab -l
+    ```
+
+Dans le fichier ``crontab`` on doit y écrire la ligne qui fera exécuter une commande (ou un script) à un moment donné.
+
+La ligne se présente comme ceci : 
+
+```sh
+# min hour dom month dow command
+* * * * * the_command
+```
+
+Plus précisément : 
+
+```sh
+# .---------------- minute (0 - 59)
+# |  .------------- heure (0 - 23)
+# |  |  .---------- jour du mois (1 - 31)
+# |  |  |  .------- mois (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- jour de la semaine (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  *  la commande à exécuter
+```
+

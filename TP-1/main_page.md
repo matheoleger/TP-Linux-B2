@@ -443,7 +443,109 @@ On peut aussi voir dans le sous-menu *Général > Gestion des agents*, qu'il y a
 ![agent](./img/configuration_fusion/agent/2021-09-14-163742.jpg)
 
 
+## :floppy_disk: Mise en place d'une sauvegarde de GLPI
+
+> :bulb: Cette partie du TP a été réalisée à l'aide de cette page : https://christiansueur.com/sauvegarde-automatique-de-votre-serveur-glpi/
+
+### Sauvegarde automatique grâce à crontab
+
+Tout d'abord comment fonctionne le [crontab](./definition#crontab).
+
+Comme on peut le voir dans la définition, le ``crontab`` va permettre de faire des commandes automatiques, à un moment précis (et de manière récurente).
+
+On aura donc besoin de l'utiliser pour créer des sauvegardes automatiques.
+
+Tout d'abord, on créé le script qui va permettre de faire la sauvegarde :
+
+```sh
+touch cron_glpi.sh
+```
+(J'ai choisi de mettre mon fichier dans un dossier personnelle, mais on peut très bien le mettre comme il est conseillé conventionnellement)
+
+Une fois le fichier ouvert, j'y ai ajouté le script proposé sur un site internet (voir [ici](https://christiansueur.com/sauvegarde-automatique-de-votre-serveur-glpi/)).
+
+Le script a été modifié afin de fonctionner avec mon système.
+
+```sh
+#!/bin/bash
+# Backup Fichier
+
+echo "lancement du scripts de backup"
+
+mkdir /tmp/backup
+
+bkpdate=$(date +'%Y-%m-%d')
+
+bkp_dir=/tmp/backup/$bkpdate-bkp.tar.gz
+glpi_dir=/var/www/html/glpi
+bkp_sql=/tmp/backup/bkp.sql
+bkp_gen=/tmp/backup-$bkpdate.tar.gz
+bkp=/tmp/backup
 
 
+#archive des fichiers de glpi
+tar -cvzf $bkp_dir $glpi_dir
 
+#archive de la base de donnée
+glpi_user=glpiuser
+glpi_pass=<monmdp>
+mysqldump -u$glpi_user -p$glpi_pass -h localhost glpidb > $bkp_sql
+
+#archive des fichiers et de la bdd
+tar -cvzf $bkp_gen $bkp
+```
+Voici l'explication du script :
+
+- Dans un premier temps, je créé le dossier ``backup`` dans le chemin `/tmp/` :
+
+    ```sh
+    mkdir /tmp/backup
+    ```
+- Je vais créé une variable `bkpdate` afin de récupérer la date. (pas besoin de mettre l'heure car notre cron va faire une sauvegarde à la même heure)
+
+    ```sh
+    bkpdate=$(date +'%Y-%m-%d')
+    ```
+    Ici `date` va nous donner la date et grâce au caractère qui suivent la commande, on va avoir un format de date sous la forme : `year-month-day`
+
+- Nous avons ensuite la déclaration des variables qui contiennent les chemins qui seront nécessaire pour faire la sauvegarde :
+
+    ```sh
+    bkp_dir=/tmp/backup/$bkpdate-bkp.tar.gz
+    glpi_dir=/var/www/html/glpi
+    bkp_sql=/tmp/backup/bkp.sql
+    bkp_gen=/tmp/backup-$bkpdate.tar.gz
+    bkp=/tmp/backup
+    ```
+    On peut voir l'utilisation de la variable `$bkpdate`, afin de mettre dans le nom des archives, la date à laquelle la sauvegarde c'est effectué.
+
+- Nous avons ensuite l'archive des fichiers de GLPI :
+
+    ```sh
+    #archive des fichiers de glpi
+    tar -cvzf $bkp_dir $glpi_dir
+    ```
+
+- Puis on copie les données de la base de données :
+
+    ```sh
+    #archive de la base de donnée
+    glpi_user=glpiuser
+    glpi_pass=<monmdp>
+    mysqldump -u$glpi_user -p$glpi_pass -h localhost glpidb > $bkp_sql
+    ```
+    La commande `mysqldumb` va permettre cette copie, il faut donner en option : le nom d'utilisateur et le mot de passe ainsi que le nom de la base de donnée.
+
+- Et pour finir, on archive tout ce qu'on a récupérer / archiver précédemment :
+
+    ```sh
+    #archive des fichiers et de la bdd
+    tar -cvzf $bkp_gen $bkp
+    ```
+
+> :bulb: la commande `tar` fonctionne comme ceci : 
+> Pour la partie `-cvzf`, `-c` pour **compression**, `v` pour **verbeux** (pour afficher ce qui se passe dans la console, ``z`` car c'est un `.tar.gz` et f car c'est **obligatoire** pour **lire des fichiers**. 
+> La commande se forme donc : `tar -cvzf <nom_de_l'archive> <chemin_du_dossier_à_archiver>`)
+
+Une fois ce script mit en place, on peut commencer à installer 
 
