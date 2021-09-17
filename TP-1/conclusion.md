@@ -39,7 +39,7 @@ J'ai même réussi quelques fonctionnalités bonus (mais utile pour pouvoir conf
 
 ---
 
-[Mettre en place un serveur de messagerie.](./serveur-mail.md) | Page 7 | [Définition --->](./definition.md)
+[<--- Mettre en place un serveur de messagerie](./serveur-mail.md) | Page 7 | [Définition --->](./definition.md)
 
 
 

@@ -4,7 +4,7 @@
 
 ## Sauvegarde automatique grâce à crontab
 
-Tout d'abord comment fonctionne le [crontab](./definition#crontab).
+Tout d'abord comment fonctionne le [crontab](./definition.md#crontab).
 
 Comme on peut le voir dans la définition, le ``crontab`` va permettre de faire des commandes automatiques, à un moment précis (et de manière récurrente).
 

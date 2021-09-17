@@ -104,7 +104,7 @@ Maintenant, on peut passer à l'installation via l'interface graphique (web).
 
 Pour y accéder il faut ouvrir, dans le navigateur, l'interface web se trouvant à l'adresse de `http://<adresse_ip_du_serveur>/glpi`.
 
-> :warning: L'adresse Ipv4 utilisée ici, est différente de celle utilisée lors des tests de ``ping`` (voir dans les [pages précédentes](./config_réseaux.md)). En effet, l'installation et la configuration ont été faites sur un autre réseau.
+> :warning: L'adresse Ipv4 utilisée ici, est différente de celle utilisée lors des tests de ``ping`` (voir dans les [pages précédentes](./config_réseaux.md#electric_plug-configuration-réseau)). En effet, l'installation et la configuration ont été faites sur un autre réseau.
 
 Ici, se sera `http://192.168.191.17/glpi`, ce qui ouvrira :
 

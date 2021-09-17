@@ -4,7 +4,7 @@
 
 Lien de la documentation source: https://doc.ubuntu-fr.org/apache2
 
->  Un **serveur HTTP** permet à un site web de communiquer avec un navigateur en utilisant le protocole HTTP(S) et ses extensions (WebDAV, etc.). **Apache** est probablement le **serveur HTTP** le plus populaire. C'est donc lui qui met à disposition la plupart des sites Web du WWW.
+>  Un **serveur HTTP** permet à un site web de communiquer avec un navigateur en utilisant le protocole HTTP(S) et ses extensions (WebDAV, etc.). **Apache** est probablement le **serveur HTTP** le plus populaire. C'est donc lui qui met à disposition la plupart des sites Web du WWW .
 > Il est produit par la Apache Software Foundation. C'est un logiciel libre fourni sous la licence spécifique Apache. *- Documentation Ubuntu*
 
 > On utilise généralement Apache en conjonction avec d'autres logiciels, permettant d'interpréter du code et d'accéder à des bases de données. Le cas le plus courant est celui d'un **serveur LAMP** (Linux Apache MySQL PHP). *- Documentation Ubuntu*

@@ -70,7 +70,7 @@ ping mail.tecmint.com
 
 ## :mailbox: Installation du serveur de mail Postfix
 
-Afin de créer un serveur de mail, nous allons utiliser *Postfix* comme [MTA](./definition.md#postfix).
+Afin de créer un serveur de mail, nous allons utiliser *Postfix* comme [MTA](./definition.md#mta).
 
 Pour l'installer, on fait la commande :
 

@@ -64,7 +64,7 @@ Pour accéder au menu de FusionInventory, aller dans *Administration > FusionInv
 
 ![glpiinstall4](./img/configuration_fusion/installation/2021-09-14-160445.jpg)
 
-On va pouvoir régler le problème du ``crontab``. En effet, il est nécessaire, pour enlever l'erreur visible dans le menu, d'ajouter le fichier ``cron.php`` au [crontab](./definition#crontab) de Linux.
+On va pouvoir régler le problème du ``crontab``. En effet, il est nécessaire, pour enlever l'erreur visible dans le menu, d'ajouter le fichier ``cron.php`` au [crontab](./definition.md#crontab) de Linux.
 
 On reparlera du `crontab` plus en détail dans la partie [Mettre en place une sauvegarde de GLPI](./).
 
