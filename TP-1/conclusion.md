@@ -4,11 +4,11 @@
 
 On a pu voir à la fin de chaque partie (ou presque), des axes d'amélioration.
 
-Globalement les éléments qui seraient à améliorer dans le cadre professionnel serait :
+Les éléments qui seraient à améliorer dans le cadre professionnel :
 
 - **la sécurité** : 
     - Avec le **changement des mots passes** (régulièrement ?) pour quelques choses de plus sécurisés.
-    - Les **versions utilisés**, plus elles sont récentes et plus la sécurité est élevée.
+    - Les **versions utilisées**, plus elles sont récentes et plus la sécurité est élevée.
 
 - **la configuration des outils** :
     - Ici, nous avons configuré les outils de manières basiques. Il faudrait donc, dans le cadre professionnel, faire une **configuration complète**.
@@ -23,11 +23,11 @@ Lors de ce TP, j'ai rencontré **quelques difficultés** :
 
 - **Choix des versions** : Pour le GLPI et le plugin FusionInventory, je ne savais pas réellement ce qu'il fallait choisir comme version.
 
-- **Sauvegarde automatique** : Le ``crontab`` a été assez difficile à réaliser. En effet, il y avait peu de documentation sur internet. Après pas mal de réfléxion et un refactoring du code trouvé sur Internet, on a enfin réussi à faire fonctionner la sauvegarde automatique.
+- **Sauvegarde automatique** : Le ``crontab`` a été assez difficile à réaliser. En effet, il y avait peu de documentation sur internet. Après pas mal de réflexion et un refactoring du code trouvé sur Internet, on a enfin réussi à faire fonctionner la sauvegarde automatique.
 
 ## Elements réussis
 
-Globalement, j'ai réussi ce qui était demandé (mise à part le système de serveur mail) :
+Globalement, j'ai réussi ce qui était demandé (mis à part le système de serveur mail) :
 
 - **Configurer** une **machine virtuelle** faisant office de **serveur** ainsi que d'une machine **cliente** :heavy_check_mark:
 
@@ -36,6 +36,8 @@ Globalement, j'ai réussi ce qui était demandé (mise à part le système de se
 - Configurer **FusionInventory** et **FusionInventory agent** :heavy_check_mark:
 
 J'ai même réussi quelques fonctionnalités bonus (mais utile pour pouvoir configurer plus facilement les outils) comme l'utilisation de **OpenSSH**.
+
+---
 
 [Mettre en place un serveur de messagerie.](./serveur-mail.md) | Page 7 | [Définition --->](./definition.md)
 
