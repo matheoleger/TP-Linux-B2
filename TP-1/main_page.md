@@ -2,7 +2,7 @@
 # :building_construction: TP n°1 : configuration de l'infrastructure pour un client.
 ---
 
-## Sommaire du *TP n°1* :
+## :books: Sommaire :
 
 - [Mise en place d'une machine virtuelle et configuration des services réseaux](./config_réseaux.md)
 - [Configuration d'un outil de gestion de ticket](./config_glpi.md)
@@ -12,7 +12,7 @@
 
 ---
 
-## Consignes : 
+## :clipboard: Consignes : 
 
 Le sujet répond à un objectif, **accompagner le client dans la configuration de son infrastructure**.
 
@@ -28,3 +28,12 @@ Les compétences seront évaluées selon les **critères** suivants :
 - Mettre en place un **serveur de messagerie**.
 
 Temps dédié à la compréhension du sujet et à sa **réalisation** : *18h*.
+
+---
+
+## :hammer_and_wrench: Outils utilisés :
+
+- Utilisation de **VMWare Workstation Player** pour les machines virtuelles.
+- Utilisation de **GLPI**.
+- Utilisation de **FusionInventory**.
+- Utilisation de **GitHub** pour la documentation.

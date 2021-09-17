@@ -9,7 +9,7 @@ Lien de la documentation source: https://doc.ubuntu-fr.org/apache2
 
 > On utilise généralement Apache en conjonction avec d'autres logiciels, permettant d'interpréter du code et d'accéder à des bases de données. Le cas le plus courant est celui d'un **serveur LAMP** (Linux Apache MySQL PHP). 
 
-**Pour résumer :** *Apache est un serveur HTTP, très utilisé pour la création de service web*
+**Pour résumer :** *Apache est un serveur HTTP, très utilisé pour la création de service web*.
 
 ## PHP
 
@@ -17,7 +17,7 @@ Lien de la documentation source: https://fr.wikipedia.org/wiki/PHP
 
 > PHP: **Hypertext Preprocessor**, plus connu sous son sigle **PHP** (sigle auto-référentiel), est un langage de programmation libre, **principalement utilisé** pour produire des **pages Web dynamiques via un serveur HTTP**, mais pouvant également fonctionner comme n'importe quel langage interprété de façon locale. PHP est un langage impératif **orienté objet**. 
 
-**Pour résumer :** *PHP est un langage de programmation qui est souvent utilisé pour créer des pages Web*
+**Pour résumer :** *PHP est un langage de programmation qui est souvent utilisé pour créer des pages Web*.
 
 ## MariaDB
 
@@ -25,7 +25,7 @@ Lien de la documentation source: https://fr.wikipedia.org/wiki/MariaDB
 
 > MariaDB est un **système de gestion de base de données** édité sous licence GPL. Il s'agit d'un **fork communautaire de MySQL** : la gouvernance du projet est assurée par la fondation **MariaDB**, et sa maintenance par la société **Monty Program AB**, créateur du projet. Cette gouvernance confère au logiciel l’assurance de rester libre. 
 
-**Pour résumer :** *MariaDB est un fork communautaire de MySQL, c'est un système de gestion de base de données.*
+**Pour résumer :** *MariaDB est un fork communautaire de MySQL, c'est un système de gestion de bases de données.*
 
 ## GLPI
 
@@ -49,7 +49,7 @@ Lien de la documentation source: https://www.linuxtricks.fr/wiki/cron-et-crontab
 
 > Crontab est un outil qui permet de lancer des applications de façon régulière, pratique pour un serveur pour y lancer des scripts de sauvegardes, etc.
 
-Pour résumer : *Crontab est un outil qui va permettre d'éxecuter des commandes / des scripts de manière récurente.*
+Pour résumer : *Crontab est un outil qui va permettre d'exécuter des commandes/des scripts de manière récurrente.*
 
 Afin d'éditer un fichier ``crontab``, on fait la commande :
 
@@ -57,9 +57,9 @@ Afin d'éditer un fichier ``crontab``, on fait la commande :
 crontab -e
 ```
 
-Ceci ouvrira un fichier dans lequel on peut écrire. Il faudra ici écrire l'action à faire, et quand la faire.
+Ceci ouvrira un fichier dans lequel on peut écrire. Il faudra ici écrire l'action à faire, et l'heure/la date d'exécution.
 
-Le ``crontab`` est dépendant à chaque utilisateur. Si on veut ouvrir un *cron* en tant que administrateur, on fait :
+Le ``crontab`` est dépendant à chaque utilisateur. Si l'on veut ouvrir un *cron* en tant qu'administrateur, on fait :
 
 ```sh
 sudo crontab -e
@@ -72,7 +72,7 @@ Il existe plusieurs options à la commande :
     ```sh
     crontab -r
     ```
-- Pour **supprimer** un *crontab* mais avec demande de confirmation
+- Pour **supprimer** un *crontab* mais avec une demande de confirmation
 
     ```sh
     crontab -i
@@ -83,7 +83,7 @@ Il existe plusieurs options à la commande :
     crontab -l
     ```
 
-Dans le fichier ``crontab`` on doit y écrire la ligne qui fera exécuter une commande (ou un script) à un moment donné.
+Dans le fichier ``crontab``, on doit y écrire la ligne qui fera exécuter une commande (ou un script) à un moment donné.
 
 La ligne se présente comme ceci : 
 

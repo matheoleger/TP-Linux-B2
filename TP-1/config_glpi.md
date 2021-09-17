@@ -12,7 +12,7 @@ Tout d'abord, il faut mettre à jour la liste des paquets
 apt-get update && apt-get upgrade
 ```
 
-Maintenant, on peut installer les outils nécessaire :
+Maintenant, on peut installer les outils nécessaires :
 
 - installation de [Apache2](./definition.md#apache2) :
     ```sh
@@ -27,23 +27,23 @@ Maintenant, on peut installer les outils nécessaire :
     apt-get install mariadb-server
     mysql_secure_installation
     ```
-    Pour **MariaDB**, il y a plusieurs questions qui s'affiche lors de l'installation, il faut répondre "**Y**" à toutes.
+    Pour **MariaDB**, il y a plusieurs questions qui s'affichent lors de l'installation, il faut répondre "**Y**" pour toutes les questions.
 
-    C'est ici que l'on va créer un utilisateur root pour **MariaDB**, et aussi supprimer l'utilsateur par défaut.
+    C'est ici que l'on va créer un utilisateur root pour **MariaDB**, et aussi supprimer l'utilisateur par défaut.
 
     ![mariaDB](./img/configuration_GLPI/installation/2021-09-14-142742.jpg)
 
 Il faut aussi installer quelques modules complémentaires pour GLPI :
 
-Cette commande installe des modules pour un meilleur fonctionnement de GLPI (meilleure intéraction avec des technologies)
+Cette commande installe des modules pour un meilleur fonctionnement de GLPI (meilleure interaction avec certaines technologies)
 
 ```sh
 apt-get install apcupsd php-apcu
 ```
 
-Ensuite, il faut redémarré les services *Apache2* et *MariaDB*:
+Ensuite, il faut redémarrer les services *Apache2* et *MariaDB*:
 
-(si jamais la deuxième ligne de la commande ne marche pas, remplacé `mysql` par `mariadb`)
+(si jamais la deuxième ligne de la commande ne marche pas, il faut remplacer `mysql` par `mariadb`)
 
 ```sh
 /etc/init.d/apache2 restart
@@ -57,7 +57,7 @@ Maintenant, nous allons créer la base de données :
 mysql -u root -p
 ```
 
-> :bulb: MariaDB va donc ouvrir un **command prompt** (`MariaDB [(none)]>`) qui n'est plus celui de Debian. Les prochaines commandes sont comprise par le **prompt** de MariaDB.
+> :bulb: MariaDB va donc ouvrir un **command prompt** (`MariaDB [(none)]>`) qui n'est plus celui de Debian. Les prochaines commandes sont comprises par le **prompt** de MariaDB.
 
 ```sh
 MariaDB [(none)]> create database glpidb; 
@@ -66,11 +66,11 @@ MariaDB [(none)]> quit
 ```
 Voici ce que font les commandes ci-dessus :
 - La première commande va créer la base de données `glpidb`
-- La deuxième commande donne les droits de cette base à l'utilisateur (qui est créé à ce moment là) `glpiuser` et défini le mot de passe. 
+- La deuxième commande donne les droits sur cette base, à l'utilisateur (qui est créé à ce moment-là) `glpiuser` et définit le mot de passe. 
     :warning: Il faut changer "votre-mot-de-passe" par celui de votre choix.
 - La dernière commande permet de quitter le *command prompt* de MariaDB.
 
-Maintenant, pour plus de simplicité avec la *BDD*, on installera ``phpMyAdmin``, qui va vous permettre de gérer la base de données en interface graphique.
+Maintenant, pour plus de simplicité avec la *BDD*, on installera ``phpMyAdmin``, qui va nous permettre de gérer la base de données en interface graphique.
 
 (Si jamais l'installation de PhpMyAdmin ne marche pas, il faut chercher un autre outils.)
 
@@ -80,7 +80,7 @@ apt-get install phpmyadmin
 
 Un menu va s'ouvrir, il faut choisir *Apache2* puis répondre *NON* à la demande de création de ``db_common``.
 
-Tout ce qu'on a fait jusque là, à permit de créer un serveur de type ***LAMP*** (Linux Apache MySQL PHP).
+Tout ce qu'on a fait jusque-là, a permis de créer un serveur de type ***LAMP*** (Linux Apache MySQL PHP).
 
 ## :tickets: Installation et configuration de GLPI
 
@@ -102,9 +102,9 @@ chown -R www-data /var/www/html/glpi/
 
 Maintenant, on peut passer à l'installation via l'interface graphique (web).
 
-Pour y accéder, il faut ouvrir dans le navigateur, l'interface web se trouvant à l'adresse de `http://<adresse_ip_du_serveur>/glpi`.
+Pour y accéder il faut ouvrir, dans le navigateur, l'interface web se trouvant à l'adresse de `http://<adresse_ip_du_serveur>/glpi`.
 
-> :warning: L'adresse Ipv4 utilisée ici, est différente de celle utilisée lors des test de ``ping`` (voir [plus haut](./main_page#electric_plug-configuration-réseau)). En effet, l'installation / configuration ont été fait sur un autre réseau.
+> :warning: L'adresse Ipv4 utilisée ici, est différente de celle utilisée lors des tests de ``ping`` (voir dans les [pages précédentes](./config_réseaux.md)). En effet, l'installation et la configuration ont été faites sur un autre réseau.
 
 Ici, se sera `http://192.168.191.17/glpi`, ce qui ouvrira :
 
@@ -112,7 +112,7 @@ Ici, se sera `http://192.168.191.17/glpi`, ce qui ouvrira :
 
 Il faut choisir la langue puis cliquer sur *OK*.
 
-Ensuite, il faut accepter la Licence, puis cliquer sur *Continuer*.
+Ensuite, il faut accepter la *Licence*, puis cliquer sur *Continuer*.
 
 ![glpiinstall2](./img/configuration_GLPI/installation/2021-09-14-150255.jpg)
 
