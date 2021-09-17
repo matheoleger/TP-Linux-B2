@@ -188,4 +188,6 @@ On peut donc maintenant se connecter à *GLPI* :
 
 - On remarque aussi que les **mots de passe** utilisés, ne sont **pas sécurisé**. Donc dans un cas réel, il serait important de faire des **mots de passe plus sécurisé** (*par exemple pour le compte administrateur "glpi"*)
 
+---
+
 [<--- Mise en place d'une machine virtuelle et...](./config_réseaux.md) | page 2 |[Plugin de remontée de poste client... --->](./config_fusioninventory.md)

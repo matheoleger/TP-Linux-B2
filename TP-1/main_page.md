@@ -59,4 +59,6 @@ Temps dédié à la compréhension du sujet et à sa **réalisation** : *18h*.
 
 - Pour la sauvegarde automatique : https://christiansueur.com/sauvegarde-automatique-de-votre-serveur-glpi/
 
+---
+
 | page 0 | [Mise en place d'une machine virtuelle et... --->](./config_réseaux.md)

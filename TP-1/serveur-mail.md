@@ -183,7 +183,11 @@ Malheureusement, je n'ai pas pu aller plus loin donc voilà à quoi je me suis a
 
 - Au niveau de **FusionInventory**, on aurait pu donc **configurer des collecteurs** afin de convertir les **mails** en **tickets**.
 
-[<--- Mise en place d'une sauvegarde de GLPI](./config_fusioninventory.md) | page 6 | [ Conclusion --->](./sauvegarde_glpi.md)
+- De plus, le serveur mail se trouve sur le même serveur que la GLPI. Peut-être qu'il serait plus judicieux de mettre ça sur des serveurs séparés ?
+
+---
+
+[<--- Mise en place d'une sauvegarde de GLPI](./sauvegarde_glpi.md) | page 6 | [ Conclusion --->](./conclusion.md)
 
 
 

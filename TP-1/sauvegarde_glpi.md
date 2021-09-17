@@ -195,4 +195,6 @@ On pourrait améliorer le script en y ajoutant une fonction qui supprime automat
 
 On pourrait aussi utiliser l'un des types de sauvegarde comme, la sauvegarde différentielle qui est, selon moi, un bon compromis entre gain de place et fiabilité de restauration.
 
+---
+
 [<--- Mise en place d'un poste client Windows 10 et...](./config_fusioninv_agent.md) | page 5 | [Mettre en place un serveur de messagerie --->](./serveur-mail.md)

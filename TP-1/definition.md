@@ -147,3 +147,7 @@ Il y a aussi des protocoles associés aux mails comme le protocole **POP** et **
 - le protocole **IMAP** (Internet Message Access Protocol) est un protocole qui permet d'accéder à ses courriers électroniques directement sur les serveurs de messagerie
 
 La grande différence entre les 2 protocoles, c'est la synchronisation. En effet, le protocole **IMAP** est **synchronisé** en temps réel, par conséquent, on peut retrouver nos mails, même si on change d'équipement. Contrairement au protocole **POP**.
+
+---
+
+[<--- Conclusion](./conclusion.md) | Page 8

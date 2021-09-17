@@ -102,5 +102,6 @@ Comme on peut le voir ci-dessus, on utilise la commande `ssh username@ipadress` 
 
 Même si dans notre cas cela n'est pas important, on pourrait configurer le Pare-feux de la machine cliente, afin qu'elle accepte les pings des machines se trouvant dans le même sous-réseaux.
 
+---
 
 [<--- Page de garde](./main_page.md) | page 1 | [Configuration d'un outil de gestion de ticket --->](./config_glpi.md)
