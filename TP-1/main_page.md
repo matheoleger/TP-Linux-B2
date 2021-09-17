@@ -6,7 +6,7 @@
 - [Configuration d'un outil de gestion de ticket](./main_page.md#ticket-configuration-dun-outil-de-gestion-de-ticket)
 - [Ajout au serveur, d'un plugin de remontée de poste client pour pouvoir réaliser l’inventaire du parc](./main_page.md#ajout-au-serveur-d-un-plugin-de-remontée-de-poste-client-pour-pouvoir-réaliser-linventaire-du-parc)
 - [Mise en place d'un poste client Windows 10 et remonter le poste client dans l’inventaire GLPI](./main_page.md#mise-en-place-dun-poste-client-Windows-10-et-remonter-le-poste-client-dans-linventaire-GLPI)
-- Mise en place d'une sauvegarde de GLPI
+- [Mise en place d'une sauvegarde de GLPI]()
 
 ---
 
@@ -302,7 +302,7 @@ On peut donc maintenant se connecter à *GLPI* :
 
 Tout d'abord, il est important de savoir quelle version utiliser avec la version de GLPI. Pour ce faire, on peut regarder sur le site http://fusioninventory.org/
 
-Dans notre cas, on utilise la *version 9.3+1.4* de FusionInventory.
+Après avoir regardé pour notre version de GLPI, on utilise la *version 9.3+1.4* de FusionInventory (la *version 9.3+1.3* n'existe plus).
 
 On peut remettre à jour la liste des paquets :
 
@@ -455,16 +455,61 @@ Comme on peut le voir dans la définition, le ``crontab`` va permettre de faire 
 
 On aura donc besoin de l'utiliser pour créer des sauvegardes automatiques.
 
-Tout d'abord, on créé le script qui va permettre de faire la sauvegarde :
+Avant de commencer à écrire le script et mettre en place le ``crontab``, il faut savoir quelle type de sauvegarde de données existe, et lequel nous allons utiliser.
+
+Il existe 4 techniques de sauvegardes (les plus communes) :
+- La sauvegarde **complète** :
+    On copie tous les fichiers de la source de données, et on stocke une sauvegarde de plus (la copie de la dernière sauvegarde).
+
+    **Inconvénients :** Prend de la place. Le temps de sauvegarde est plus lent.
+
+    **Avantages :** Opérations de restauration plus rapides et plus simples.
+
+- La sauvegarde **incrémentale** :
+    Il y a une sauvegarde initiale complète. Puis les sauvegardes suivantes ne stocke que les modifications apportées depuis la dernière sauvegarde. (Par conséquent, on ne garde que les modifications apportés lors de la dernière sauvegarde non complète.)
+
+    ![incremental](https://www.it-connect.fr/wp-content-itc/uploads/2015/03/sauvegar-incrementielle-01.png)
+    (cliquez sur l'image pour trouver la source.)
+
+    **Inconvénients :** Opérations de restauration plus lentes et plus complexe.
+
+    **Avantages :** Prend le moins de place. Le temps de sauvegarde est plus rapide.
+
+
+- La sauvegarde **différentielle** :
+    L'idée est proche de celle de la sauvegarde incrémentale, mais à la différence qu'elle stocke toutes les modifications apportées depuis la dernière sauvegarde **complète**. (Par conséquent, on ne garde que les modifications apportés lors de la dernière sauvegarde complète, ce qui veut dire qu'on stocke plusieurs fois les mêmes choses.)
+
+    ![incremental](https://www.it-connect.fr/wp-content-itc/uploads/2015/03/sauvegarde-differentielle-01.png)
+    (cliquez sur l'image pour trouver la source.)
+
+    **Inconvénients :** Prend plus de place que l'incrementale. Le temps de sauvegarde est un peu plus lent.
+
+    **Avantages :** Opérations de restauration plus rapides que l'incrémentale et prend moins de place qu'une sauvegarde complète. Plus fiable que l'incrementale.
+
+
+- La sauvegarde **Miroir** :
+    On copie exactement tous les fichiers sources des données. Il n'y a que 2 sauvegardes et elles sont modifiés 1/2 sauvegardes (Pendant que l'une est modifié, l'autre stocke l'ancienne sauvegarde, puis on alterne)
+
+
+Dans notre cas, on va utiliser le système de sauvegarde complète (pour des raisons de simplicité).
+
+
+Maintenant, on créé le script qui va permettre de faire la sauvegarde :
 
 ```sh
 touch cron_glpi.sh
 ```
-(J'ai choisi de mettre mon fichier dans un dossier personnelle, mais on peut très bien le mettre comme il est conseillé conventionnellement)
+(J'ai choisi de mettre mon fichier dans un dossier personnel, mais on peut très bien le mettre comme il est conseillé conventionnellement)
 
 Une fois le fichier ouvert, j'y ai ajouté le script proposé sur un site internet (voir [ici](https://christiansueur.com/sauvegarde-automatique-de-votre-serveur-glpi/)).
 
+![basicscrpt](./img/crontab/2021-09-14-165018.jpg)
+
+
+
 Le script a été modifié afin de fonctionner avec mon système.
+
+Il y a quand même quelques modifications apportées comme : l'ajout de la date, changement de certaines variables, etc...
 
 ```sh
 #!/bin/bash
@@ -519,6 +564,8 @@ Voici l'explication du script :
     ```
     On peut voir l'utilisation de la variable `$bkpdate`, afin de mettre dans le nom des archives, la date à laquelle la sauvegarde c'est effectué.
 
+    :warning: Il se peut que votre chemin d'accès aux fichiers de GLPI soit différent, par conséquent, il faut rechercher où sont mis vos fichiers.
+
 - Nous avons ensuite l'archive des fichiers de GLPI :
 
     ```sh
@@ -547,5 +594,43 @@ Voici l'explication du script :
 > Pour la partie `-cvzf`, `-c` pour **compression**, `v` pour **verbeux** (pour afficher ce qui se passe dans la console, ``z`` car c'est un `.tar.gz` et f car c'est **obligatoire** pour **lire des fichiers**. 
 > La commande se forme donc : `tar -cvzf <nom_de_l'archive> <chemin_du_dossier_à_archiver>`)
 
-Une fois ce script mit en place, on peut commencer à installer 
+Une fois ce script mit en place, on peut commencer à installer, la routine du ``crontab``
 
+Pour ce faire, on tape la commande :
+
+```sh
+sudo crontab -e
+```
+
+La fenêtre suivante devrait s'ouvrir :
+
+![cron_fenetre](./img/crontab/2021-09-15-125542.jpg)
+
+Il faut y ajouter notre nouvelle "*routine*".
+
+On peut y ajouter la ligne utilisée par le tutoriel :
+
+```sh
+0 0 * * * root /home/matheleger/scripts/cron_glpi.sh
+```
+
+Malheureusement, cette ligne ne marchera pas forcément. De plus, le fait de faire une sauvegarde tous les jours n'est pas forcément une bonne solution. Voici ce que l'on peut modifier :
+
+- Dans le cas d'un ``cron`` mis en place sur **Debian 11**, il faut utiliser `su root` au lieu de `root`.
+
+- Afin de faire une sauvegarde **du Lundi au Jeudi**, à 00h, on peut faire : `0 0 * * 1-4`
+
+Donc la ligne utilisé dans notre cas est la suivante :
+
+```sh
+0 0 * * 1-4 su root /home/matheleger/scripts/cron_glpi.sh
+```
+(Pour tester le cron on peut changer l'heure et la remettre après le test effectué)
+
+On peut donc voir si cela a marché dans le répertoire `/tmp/` :
+
+![resultat](./img/crontab/2021-09-16-150508.jpg)
+
+Il y a bien le dossier ``backup`` et l'archive de ``backup``.
+
+On pourrait améliorer le script en y ajoutant une fonction qui supprime automatiquement le dossier backup (pour gagner de la place), qui supprime les archives trop anciennes, etc...
