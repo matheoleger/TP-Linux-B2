@@ -176,4 +176,16 @@ On peut donc maintenant se connecter à *GLPI* :
 
 ![glpiinstall4](./img/configuration_GLPI/installation/2021-09-14-153820.jpg)
 
-[<--- Mise en place d'une machine virtuelle et...](./config_réseaux.md) | [Plugin de remontée de poste client... --->](./config_fusioninventory.md)
+## :chart_with_upwards_trend: Axes d'améliorations
+
+- Ici, nous avons installé la **version 9.3.3** de **GLPI**. Mais, il existe une **version 9.5** qui sera meilleur au niveau :
+    - fonctionnalités disponibles.
+    - sécurité.
+
+    Bien entendu, le choix d'être resté en *9.3.3* est dû à l'**installation du plugin FusionInventory**. En effet, ce dernier n'a pas de version compatible avec la *version 9.5* de *GLPI*.
+
+    Il aurait été sûrement judicieux de passer à la **version 9.4** de **GLPI**.
+
+- On remarque aussi que les **mots de passe** utilisés, ne sont **pas sécurisé**. Donc dans un cas réel, il serait important de faire des **mots de passe plus sécurisé** (*par exemple pour le compte administrateur "glpi"*)
+
+[<--- Mise en place d'une machine virtuelle et...](./config_réseaux.md) | page 2 |[Plugin de remontée de poste client... --->](./config_fusioninventory.md)

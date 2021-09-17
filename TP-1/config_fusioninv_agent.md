@@ -48,5 +48,5 @@ On peut aussi voir dans le sous-menu *Général > Gestion des agents*, qu'il y a
 
 ![agent](./img/configuration_fusion/agent/2021-09-14-163742.jpg)
 
-[<--- Ajout au serveur, d'un plugin de remontée de poste client...](./config_fusioninventory.md) | [Mise en place d'une sauvegarde de GLPI --->](./sauvegarde_glpi.md)
+[<--- Ajout au serveur, d'un plugin de remontée de poste client...](./config_fusioninventory.md) | page 4 | [Mise en place d'une sauvegarde de GLPI --->](./sauvegarde_glpi.md)
 

@@ -96,4 +96,4 @@ Une fois sur le menu, on peut tout simplement cliquer sur le bouton *Executer*.
 
 Et on aura donc réglé le problème du `crontab`.
 
-[<--- Configuration d'un outil de gestion de ticket](./config_glpi.md) | [Remonter le poste client dans l’inventaire GLPI --->](./config_fusioninv_agent.md)
+[<--- Configuration d'un outil de gestion de ticket](./config_glpi.md) | page 3 | [Remonter le poste client dans l’inventaire GLPI --->](./config_fusioninv_agent.md)

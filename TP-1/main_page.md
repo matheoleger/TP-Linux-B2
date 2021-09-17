@@ -12,6 +12,16 @@
 
 ---
 
+## :book: Avant de lire
+
+:bulb: À noter que les définitions de certains termes comme par exemple [Apache2](./definition.md#apache2), sont mises comme tel. Pour y accéder, il suffit de cliquer sur le mot en surbrillance, vous arriverez alors à la définition (et l'explication du fonctionnement) écrite par moi.
+
+Retrouvez les définitions [ici](./definition.md).
+
+Certaines images sont directement tirés d'internet (comme par exemple les schémas). Il y a donc une indication quand c'est le cas.
+
+---
+
 ## :clipboard: Consignes : 
 
 Le sujet répond à un objectif, **accompagner le client dans la configuration de son infrastructure**.
@@ -48,3 +58,5 @@ Temps dédié à la compréhension du sujet et à sa **réalisation** : *18h*.
 - Pour le plugin FusionInventory : https://openclassrooms.com/fr/courses/1730516-gerez-votre-parc-informatique-avec-glpi/5994176-installez-le-plugin-et-l-agent-fusioninventory
 
 - Pour la sauvegarde automatique : https://christiansueur.com/sauvegarde-automatique-de-votre-serveur-glpi/
+
+| page 0 | [Mise en place d'une machine virtuelle et... --->](./config_réseaux.md)

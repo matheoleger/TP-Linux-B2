@@ -188,4 +188,11 @@ On peut donc voir si cela a marché dans le répertoire `/tmp/` :
 
 Il y a bien le dossier ``backup`` et l'archive de ``backup``.
 
+
+## :chart_with_upwards_trend: Axes d'améliorations
+
 On pourrait améliorer le script en y ajoutant une fonction qui supprime automatiquement le dossier backup (pour gagner de la place), qui supprime les archives trop anciennes, etc...
+
+On pourrait aussi utiliser l'un des types de sauvegarde comme, la sauvegarde différentielle qui est, selon moi, un bon compromis entre gain de place et fiabilité de restauration.
+
+[<--- Mise en place d'un poste client Windows 10 et...](./config_fusioninv_agent.md) | page 5 | [Mettre en place un serveur de messagerie --->](./serveur-mail.md)

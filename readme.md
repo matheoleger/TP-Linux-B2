@@ -1,12 +1,6 @@
+![readmeimg](./img-divers/logo-readme.png)
+
 # :penguin: Linux – Services réseaux
-
----
-
-### **Présenté par :** *LEGER Mathéo*
-
-### **Formation** : *B2 - Informatique*
-
-### **Intervenante encadrant les Travaux** : *CARIBAUX Clémence*
 
 ---
 

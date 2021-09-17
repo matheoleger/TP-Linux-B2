@@ -98,5 +98,9 @@ Une fois ceci fait, on peut directement accéder au shell via une autre machine.
 
 Comme on peut le voir ci-dessus, on utilise la commande `ssh username@ipadress` (le `username` correspond au nom de l'utilisateur du serveur auquel on veut accéder et `ipadress` c'est l'adresse de la machine serveur)
 
+## :chart_with_upwards_trend: Axes d'améliorations
 
-[<--- Page de garde](./main_page.md) | [Configuration d'un outil de gestion de ticket --->](./config_glpi.md)
+Même si dans notre cas cela n'est pas important, on pourrait configurer le Pare-feux de la machine cliente, afin qu'elle accepte les pings des machines se trouvant dans le même sous-réseaux.
+
+
+[<--- Page de garde](./main_page.md) | page 1 | [Configuration d'un outil de gestion de ticket --->](./config_glpi.md)
