@@ -36,4 +36,15 @@ Temps dédié à la compréhension du sujet et à sa **réalisation** : *18h*.
 - Utilisation de **VMWare Workstation Player** pour les machines virtuelles.
 - Utilisation de **GLPI**.
 - Utilisation de **FusionInventory**.
+- Utilisation de **OpenSSH** pour rendre la configuration plus simple et rapide à faire.
 - Utilisation de **GitHub** pour la documentation.
+
+---
+
+## :link: Sources :
+
+- Pour le GLPI : https://openclassrooms.com/fr/courses/1730516-gerez-votre-parc-informatique-avec-glpi/5993816-installez-votre-serveur-glpi
+
+- Pour le plugin FusionInventory : https://openclassrooms.com/fr/courses/1730516-gerez-votre-parc-informatique-avec-glpi/5994176-installez-le-plugin-et-l-agent-fusioninventory
+
+- Pour la sauvegarde automatique : https://christiansueur.com/sauvegarde-automatique-de-votre-serveur-glpi/

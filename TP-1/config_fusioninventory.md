@@ -50,17 +50,17 @@ Ensuite, il faut aller dans *Configuration > Plugins*
 
 ![glpiinstall4](./img/configuration_fusion/installation/2021-09-14-153952.jpg)
 
-On peut y retrouver le plugins FusionInventory qu'il faut installer en appuyant sur le boutons *Installer*.
+On peut y retrouver le plugins FusionInventory qu'il faut installer en appuyant sur le bouton *Installer*.
 
 ![glpiinstall4](./img/configuration_fusion/installation/2021-09-14-154111.jpg)
 
-Une fois l'installation terminé, on peut appuyer sur le bouton *Activer*.
+Une fois l'installation terminée, on peut appuyer sur le bouton *Activer*.
 
 ![glpiinstall4](./img/configuration_fusion/installation/2021-09-14-154521.jpg)
 
 ## :minidisc: Configurer FusionInventory
 
-Pour acceder au menu de FusionInventory, aller dans *Administration > FusionInventory*.
+Pour accéder au menu de FusionInventory, aller dans *Administration > FusionInventory*.
 
 ![glpiinstall4](./img/configuration_fusion/installation/2021-09-14-160445.jpg)
 
@@ -78,7 +78,7 @@ Puis on écrit :
 ```sh
 */1 * * * * /usr/bin/php5 /var/www/html/glpi/front/cron.php &>/dev/null
 ```
-Une fois fait, pour que les modifications soient prise en compte, on redémarre le *cron* avec la ligne :
+Une fois fait, pour que les modifications soient prises en compte, on redémarre le *cron* avec la ligne :
 
 ```sh
 /etc/init.d/cron restart
@@ -86,7 +86,7 @@ Une fois fait, pour que les modifications soient prise en compte, on redémarre 
 
 Une fois relancer, on peut continuer la configuration sur l'interface web. On va donc dans *Configuration > Actions*.
 
-Il faut y trouver l'action nommé ``taskscheduler`` et cliquer dessus.
+Il faut y trouver l'action nommée ``taskscheduler`` et cliquer dessus.
 
 ![taskscheduler](./img/configuration_fusion/installation/2021-09-14-161342.jpg)
 
@@ -94,6 +94,6 @@ Une fois sur le menu, on peut tout simplement cliquer sur le bouton *Executer*.
 
 ![taskscheduler](./img/configuration_fusion/installation/2021-09-14-161434.jpg)
 
-Et on aura donc régler le problème du `crontab`.
+Et on aura donc réglé le problème du `crontab`.
 
 [<--- Configuration d'un outil de gestion de ticket](./config_glpi.md) | [Remonter le poste client dans l’inventaire GLPI --->](./config_fusioninv_agent.md)

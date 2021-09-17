@@ -120,7 +120,7 @@ Puis, cliquer sur *Installer* :
 
 ![glpiinstall2](./img/configuration_GLPI/installation/2021-09-14-150351.jpg)
 
-La page suivante nous montre tous les paquets qui doivent être installer :
+La page suivante nous montre tous les paquets qui doivent être installés :
 
 ![glpiinstall2](./img/configuration_GLPI/installation/2021-09-14-150539.jpg)
 
@@ -153,7 +153,7 @@ Puis on arrive sur la page suivante, où il faut rentrer les informations comme 
 
 ![glpiinstall3](./img/configuration_GLPI/installation/2021-09-14-152230.jpg)
 
-Après avoir cliquer sur *Continuer*, on arrive sur la page où il faut choisir la base de données. Il faut choisir celle qu'on a créé précédemment : ``glpidb``.
+Après avoir cliqué sur *Continuer*, on arrive sur la page où il faut choisir la base de données. Il faut choisir celle qu'on a créée précédemment : ``glpidb``.
 
 Puis on peut appuyer sur *Continuer* (:warning: il est important de ne pas appuyer plusieurs fois sur *Continuer* au risque de créer des problèmes).
 
@@ -167,7 +167,7 @@ On peut appuyer sur *Continuer*.
 
 Pour les étapes 4 et 5, ce ne sont pas des choix importants.
 
-L'étape 6, en revanche, est importante car elle nous donne les identifiants et les mots de passe par défauts de GLPI.
+L'étape 6, en revanche, est importante car elle nous donne les identifiants et les mots de passe par défaut de GLPI.
 Il faut donc tout garder : 
 
 ![glpiinstall4](./img/configuration_GLPI/installation/2021-09-14-152818.jpg)

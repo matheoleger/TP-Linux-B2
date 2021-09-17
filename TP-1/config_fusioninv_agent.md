@@ -8,7 +8,7 @@
 
 FusionInventory Agent s'installe sur les machines clients.
 
-:bulb: Il permet de faire l'inventaire de notre parc informatique (il va donc afficher la machine client ayant installer l'agent)
+:bulb: Il permet de faire l'inventaire de notre parc informatique (il va donc afficher la machine client ayant installée l'agent)
 
 Après avoir choisi la version correspondante à ma VM, on commence l'installation.
 
@@ -40,11 +40,11 @@ On devrait arriver sur cette page :
 
 On peut maintenant cliquer sur *force an inventory*, ce qui va envoyer l'inventaire.
 
-Maintenant, on peut voir sur l'interface web de **GLPI**, dans la catégorie  *Administration > FusionInventory*, qu'il y a bien un Agent de déployer :
+Maintenant, on peut voir sur l'interface web de **GLPI**, dans la catégorie  *Administration > FusionInventory*, qu'il y a bien un Agent de déployé :
 
 ![agent](./img/configuration_fusion/agent/2021-09-14-163703.jpg)
 
-On peut aussi voir dans le sous-menu *Général > Gestion des agents*, qu'il y a bien l'agent déployer précédemment :
+On peut aussi voir dans le sous-menu *Général > Gestion des agents*, qu'il y a bien l'agent déployé précédemment :
 
 ![agent](./img/configuration_fusion/agent/2021-09-14-163742.jpg)
 
