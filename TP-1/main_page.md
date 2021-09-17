@@ -1,7 +1,5 @@
-# :building_construction: TP n°1 : configuration de l'infrastructure pour un client.
-
 ![logotp1](./img/logo-tp1.png)
-
+# :building_construction: TP n°1 : configuration de l'infrastructure pour un client.
 ---
 
 ## Sommaire du *TP n°1* :
