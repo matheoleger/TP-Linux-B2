@@ -39,7 +39,7 @@ init 6
 ```
 
 Voici l'explication des lignes ci-dessus :
-- La première commande permet de configurer le [FQDN](./definition.md#fqdn) : dans notre cas, le nom d'hôte est "*mail*" car nous voulons créer un serveur *mail*. Le domaine est "*inform*" car c'est le nom de domaine acheté (même si en réalité on ,n'a pas accès à se nom de domaine). Enfin, nous avons "*.net*" car c'est le *TLD*.
+- La première commande permet de configurer le [FQDN](./definition.md#fqdn) : dans notre cas, le nom d'hôte est "*mail*" car nous voulons créer un serveur *mail*. Le domaine est "*inform*" car c'est le nom de domaine acheté (même si en réalité on n'a pas accès à ce nom de domaine). Enfin, nous avons "*.net*" car c'est le *TLD*.
 
 - Ensuite la deuxième comment permet de placer dans le fichier `hosts`, l'adresse Ipv4 du serveur, le nom de domaine ainsi que le *FQDN* afin de savoir à quoi sert le serveur.
 

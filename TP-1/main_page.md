@@ -18,7 +18,7 @@
 
 Retrouvez les définitions [ici](./definition.md).
 
-Certaines images sont directement tirés d'internet (comme par exemple les schémas). Il y a donc une indication quand c'est le cas.
+Certaines images sont directement tirées d'internet (comme par exemple les schémas). Il y a donc une indication quand c'est le cas.
 
 ---
 
@@ -61,4 +61,4 @@ Temps dédié à la compréhension du sujet et à sa **réalisation** : *18h*.
 
 ---
 
-| page 0 | [Mise en place d'une machine virtuelle et... --->](./config_réseaux.md)
+Page 0 | [Mise en place d'une machine virtuelle et... --->](./config_réseaux.md)
