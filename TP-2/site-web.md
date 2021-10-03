@@ -28,12 +28,13 @@ On peut configurer ceci dans les *Settings* de la machine virtuelle, dans la par
 
 ![adapter](./img/installation-VM/2021-10-01-092416.jpg)
 
-Ensuite, on doit regarder si on a **Internet** sur la machine virtuelle. Dans mon cas, j'avais directement accès à internet.
+Ensuite, on doit regarder si on a **Internet** sur la machine virtuelle. Dans mon cas, j'avais directement accès à internet. En effet, la résolution DNS c'est fait automatiquement (sûrement grace à NetworkManager) et mon adresse IP était directement déjà dans le sous-réseaux
 
-Il se peut qu'il y ai des choses à configurer dans les paramètres de Debian (normalement en NAT, il n'y a pas de problème) :
+Il se peut qu'il y ai des choses à configurer dans les paramètres de Debian :
 
 ![ip](./img/installation-VM/2021-10-01-094615.jpg)
 
+On peut aussi avoir besoin de configurer un serveur DNS afin d'accéder à internet. Pour faire ceci de manière simple, on peut sûrement le configurer dans le fichier `/etc/resolv.conf`.
 
 ### Configuration SSH
 
@@ -112,7 +113,7 @@ Dans cette partie, afin de mettre en place le serveur le plus rapidement possibl
 
     De plus, on aurait pu faire un système d'***hôtes virtuels*** (comme montré dans ce [cours](https://openclassrooms.com/fr/courses/1733551-gerez-votre-serveur-linux-et-ses-services/5236051-installez-le-serveur-web-le-plus-utilise-au-monde-apache#/id/r-5442839) de OpenClassrooms) afin d'avoir la possibilité de gérer **plusieurs sites web** sur une **seule machine**.
 
-- On aurait aussi pu utiliser [PHP](./definition.md#PHP), afin de l'utiliser avec notre serveur **Apache** (à la place du HTML ?) :
+- On aurait aussi pu utiliser [PHP](./definition.md#PHP), avec notre serveur **Apache** (afin d'avoir des pages dynamiques) :
 
     Pour installer **PHP** avec **Apache**, il faut faire :
 
@@ -123,7 +124,7 @@ Dans cette partie, afin de mettre en place le serveur le plus rapidement possibl
 
 -------------
 
-[<--- Organisation d'un groupe de réflexion](./organisation.md) | Page 1 | [Configuration d'un nom de domaine pour le site web --->](./nom-domaine.md)
+[<--- Organisation d'un groupe de réflexion](./organisation.md) | Page 2 | [Configuration d'un nom de domaine pour le site web --->](./nom-domaine.md)
 
 
 

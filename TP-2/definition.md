@@ -36,3 +36,10 @@ Lien de la documentation source: https://fr.wikipedia.org/wiki/Domain_Name_Syste
 
 **Pour résumer :** *C'est un système permettant d'accéder à des services web via leur nom de domaine.*
 
+## Certificat SSL
+
+Lien de la documentation source : https://www.globalsign.com/fr/centre-information-ssl/definition-certificat-ssl
+
+> Un certificat SSL est un **fichier de données** qui lie une **clé cryptographique** aux **informations d'une organisation**. Installé sur un serveur, le certificat **active** le cadenas et le **protocole « https »**, afin d'assurer une **connexion sécurisée** entre le serveur web et le navigateur. Le SSL est généralement utilisé pour **sécuriser** les **transactions bancaires**, le transfert de **données** et les informations de **connexions**. Il est récemment devenu la norme pour sécuriser la navigation sur les sites de réseaux sociaux.
+
+**Pour résumer :** *C'est un fichier de données permettant d'avoir une sécurité lors de la transaction de données.*
