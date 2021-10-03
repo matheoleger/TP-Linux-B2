@@ -4,3 +4,4 @@
 
 La définition du certificat SSL se trouve [ici](./definition.md#certificat-ssl).
 
+<img src="https://github.com/matheoleger/TP-Linux-B2/blob/main/TP-2/img/dns/2021-10-03-190613.jpg" alt="drawing" width="500"/>
