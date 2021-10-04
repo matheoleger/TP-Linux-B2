@@ -111,7 +111,7 @@ Dans cette partie, afin de mettre en place le serveur le plus rapidement possibl
 
 - On aurait donc pu améliorer la sécurité en configurant d'avantage le serveur **Apache**.
 
-    De plus, on aurait pu faire un système d'***hôtes virtuels*** (comme montré dans ce [cours](https://openclassrooms.com/fr/courses/1733551-gerez-votre-serveur-linux-et-ses-services/5236051-installez-le-serveur-web-le-plus-utilise-au-monde-apache#/id/r-5442839) de OpenClassrooms) afin d'avoir la possibilité de gérer **plusieurs sites web** sur une **seule machine**.
+    De plus, on aurait pu faire un système d'***hôtes virtuels*** (comme montré dans ce [cours](https://openclassrooms.com/fr/courses/1733551-gerez-votre-serveur-linux-et-ses-services/5236051-installez-le-serveur-web-le-plus-utilise-au-monde-apache#/id/r-5442839) de OpenClassrooms) afin d'avoir la possibilité de gérer **plusieurs sites web** sur une **seule machine**. D'ailleurs, nous allons le faire plus tard dans ce TP : [ici](./ssl.md#Mise-en-place-dun-Vhost-avec-Apache) (nous en avons besoin pour la **certification SSL**)
 
 - On aurait aussi pu utiliser [PHP](./definition.md#PHP), avec notre serveur **Apache** (afin d'avoir des pages dynamiques) :
 

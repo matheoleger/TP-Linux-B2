@@ -43,3 +43,19 @@ Lien de la documentation source : https://www.globalsign.com/fr/centre-informati
 > Un certificat SSL est un **fichier de données** qui lie une **clé cryptographique** aux **informations d'une organisation**. Installé sur un serveur, le certificat **active** le cadenas et le **protocole « https »**, afin d'assurer une **connexion sécurisée** entre le serveur web et le navigateur. Le SSL est généralement utilisé pour **sécuriser** les **transactions bancaires**, le transfert de **données** et les informations de **connexions**. Il est récemment devenu la norme pour sécuriser la navigation sur les sites de réseaux sociaux.
 
 **Pour résumer :** *C'est un fichier de données permettant d'avoir une sécurité lors de la transaction de données.*
+
+## Let's Encrypt
+
+Lien de la documentation source : https://fr.wikipedia.org/wiki/Let%27s_Encrypt
+
+>Let's Encrypt (abrégé LE) est une **autorité de certification** lancée le 3 décembre 2015 (Bêta Version Publique). Cette autorité fournit des **certificats gratuits** X.509 pour le protocole cryptographique **TLS** au moyen d'un processus automatisé destiné à se passer du processus complexe actuel impliquant la création manuelle, la validation, la signature, l'installation et le renouvellement des certificats pour la sécurisation des sites internet. -*Wikipedia*
+
+**Pour résumer :** *C'est une autorité de certification permettant de faire cette manipulation gratuitement sans passer par une autre organisation.*
+
+## Snap
+
+Lien de la documentation source : https://fr.wikipedia.org/wiki/Snap_(gestionnaire_de_paquet)
+
+> Snap est un **système d'empaquetage** et de **déploiement de logiciels** développé par Canonical pour les systèmes d'exploitation utilisant le noyau Linux. Les paquets, appelés **snaps**, et l'outil pour les utiliser, **snapd**, fonctionnent sur une **gamme de distributions Linux** et permettent aux développeurs de logiciels de distribuer leurs applications directement aux utilisateurs.
+
+**Pour résumer :** *C'est un système permettant au développeur de déplayer leur logiciel (et de les mettre sous forme de paquêts).*

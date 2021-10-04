@@ -159,6 +159,7 @@ Et voilà :
 
 ![dnwindows](./img/dns/2021-10-03-190544.jpg)
 
+--------------------------------------------------------
 
 ## :chart_with_upwards_trend: Axes d'améliorations
 
@@ -182,6 +183,10 @@ D'après le cours :
 
 
 On aurait aussi pu trouver une manière propre d'accéder au site via le nom de domaine (sur une autre machine du même réseau privé).
+
+- Puis, on aurait pu utiliser un nom de domaine plus "officiel" : Utiliser un nom de domaine bien composé du **SLD et du TLD**. (À noter : on a besoin d'un vrai nom de domaine pour faire la **certification SSL**)
+
+-----
 
 [<--- Création d'un site web avec Apache (et PHP)](./organisation.md) | Page 3 | [Mettre en place un certificat SSL --->](./ssl.md)
 
