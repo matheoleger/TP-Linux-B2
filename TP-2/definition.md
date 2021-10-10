@@ -50,7 +50,7 @@ Lien de la documentation source : https://fr.wikipedia.org/wiki/Let%27s_Encrypt
 
 >Let's Encrypt (abrégé LE) est une **autorité de certification** lancée le 3 décembre 2015 (Bêta Version Publique). Cette autorité fournit des **certificats gratuits** X.509 pour le protocole cryptographique **TLS** au moyen d'un processus automatisé destiné à se passer du processus complexe actuel impliquant la création manuelle, la validation, la signature, l'installation et le renouvellement des certificats pour la sécurisation des sites internet. -*Wikipedia*
 
-**Pour résumer :** *C'est une autorité de certification permettant de faire cette manipulation gratuitement sans passer par une autre organisation.*
+**Pour résumer :** *C'est une autorité de certification permettant de faire cette manipulation gratuitement sans passer par une autre organisation. Elle permet de "signer" le certificat.*
 
 ## Snap
 
@@ -59,3 +59,29 @@ Lien de la documentation source : https://fr.wikipedia.org/wiki/Snap_(gestionnai
 > Snap est un **système d'empaquetage** et de **déploiement de logiciels** développé par Canonical pour les systèmes d'exploitation utilisant le noyau Linux. Les paquets, appelés **snaps**, et l'outil pour les utiliser, **snapd**, fonctionnent sur une **gamme de distributions Linux** et permettent aux développeurs de logiciels de distribuer leurs applications directement aux utilisateurs.
 
 **Pour résumer :** *C'est un système permettant au développeur de déplayer leur logiciel (et de les mettre sous forme de paquêts).*
+
+## HA
+
+Lien de la documentation source : https://fr.wikipedia.org/wiki/Haute_disponibilit%C3%A9
+
+> La **haute disponibilité** ou **high availability** (HA) est un terme souvent utilisé en informatique, à propos d'architecture de système ou d'un service pour désigner le fait que cette architecture ou ce service a un taux de disponibilité convenable. 
+
+**Pour résumer :** *C'est un terme désignant la disponibilité d'un service. On dit qu'on met en place un système de Haute Disponibilité quand notre service peut rester actif même lors de problème avec la machine principale.*
+
+## Corosync
+
+Lien de la documentation source : Le cours + Wikipédia
+
+> Corosync permet de détecter la défaillance d'un poste grâce à un système de communication et de gérer le cluster en lui-même.
+
+> Corosync Cluster Engine est un système de communication de groupe avec des fonctionnalités supplémentaires pour la mise en œuvre de la Haute disponibilité dans les applications. - [Wikipédia](https://fr.wikipedia.org/wiki/Corosync_Cluster_Engine)
+
+**Pour résumer :** *C'est un outil permettant de gérer le cluster via un système de communication.*
+
+## Pacemaker
+
+Lien de la documentation source : https://fr.wikipedia.org/wiki/Pacemaker_(logiciel)
+
+> Pacemaker est un logiciel Open source portant sur la gestion d'une grappe de machines pour un service de haute disponibilité. Il est chargé de démarrer, arrêter et superviser les ressources du cluster. Ce projet est supporté par les entreprises Red Hat, SUSE et Linbit. 
+
+**Pour résumer :** *C'est un logiciel permettant la gestion des ressources d'un cluster.*
