@@ -58,7 +58,7 @@ Lien de la documentation source : https://fr.wikipedia.org/wiki/Snap_(gestionnai
 
 > Snap est un **système d'empaquetage** et de **déploiement de logiciels** développé par Canonical pour les systèmes d'exploitation utilisant le noyau Linux. Les paquets, appelés **snaps**, et l'outil pour les utiliser, **snapd**, fonctionnent sur une **gamme de distributions Linux** et permettent aux développeurs de logiciels de distribuer leurs applications directement aux utilisateurs.
 
-**Pour résumer :** *C'est un système permettant au développeur de déplayer leur logiciel (et de les mettre sous forme de paquêts).*
+**Pour résumer :** *C'est un système permettant au développeur de déployer leur logiciel (et de les mettre sous forme de paquets).*
 
 ## HA
 
@@ -66,7 +66,7 @@ Lien de la documentation source : https://fr.wikipedia.org/wiki/Haute_disponibil
 
 > La **haute disponibilité** ou **high availability** (HA) est un terme souvent utilisé en informatique, à propos d'architecture de système ou d'un service pour désigner le fait que cette architecture ou ce service a un taux de disponibilité convenable. 
 
-**Pour résumer :** *C'est un terme désignant la disponibilité d'un service. On dit qu'on met en place un système de Haute Disponibilité quand notre service peut rester actif même lors de problème avec la machine principale.*
+**Pour résumer :** *C'est un terme désignant la disponibilité d'un service. On dit qu'on met en place un système de Haute Disponibilité quand notre service peut rester actif même lors de problèmes avec la machine principale.*
 
 ## Corosync
 
