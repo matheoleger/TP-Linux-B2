@@ -39,5 +39,5 @@ Lors de ce TP, j'ai rencontré **quelques difficultés** :
 
 ---
 
-[<--- Configuration d'un service de Haute Disponibilité](./serveur-mail.md) | Page 6 | [Définition --->](./definition.md)
+[<--- Configuration d'un service de Haute Disponibilité](./haute-dispo.md) | Page 6 | [Définition --->](./definition.md)
 
