@@ -5,10 +5,11 @@
 ## :books: Sommaire :
 
 - [Organisation d'un groupe de réflexion](./organisation.md)
-- [Configuration d'un outil de gestion de ticket](./config_glpi.md)
-- [Ajout au serveur, d'un plugin de remontée de poste client pour pouvoir réaliser l’inventaire du parc](./config_fusioninventory.md)
-- [Mise en place d'un poste client Windows 10 et remonter le poste client dans l’inventaire GLPI](./config_fusioninv_agent.md)
-- [Mise en place d'une sauvegarde de GLPI](./sauvegarde_glpi.md)
+- [Création d'un site Web avec Apache (et PHP)](./site-web.md)
+- [Configuration d'un nom de domaine pour le site web](./nom-domaine.md)
+- [Mettre en place un certificat SSL sur le site web](./ssl.md)
+- [Configuration d'un service de Haute Disponibilité avec Corosync et Pacemaker](./haute-dispo.md)
+- [Conclusion](./conclusion.md)
 
 ---
 
@@ -52,6 +53,11 @@ Temps dédié à la compréhension du sujet et à sa **réalisation** : *8h*.
 
 - Pour le serveur Apache : https://openclassrooms.com/fr/courses/1733551-gerez-votre-serveur-linux-et-ses-services/5236051-installez-le-serveur-web-le-plus-utilise-au-monde-apache
 
+- Pour la partie OpenSSL : https://guide.ubuntu-fr.org/server/certificates-and-security.html
+
+- Pour la partie de la Haute disponibilité : https://wiki.bruno-tatu.com/wiki/cluster-corosync-pacemaker
+
+    https://memo-linux.com/creer-un-cluster-ha-avec-corosync-et-pacemaker/
 ---
 
 Page 0 | [Organisation d'un groupe de réflexion --->](./organisation.md)

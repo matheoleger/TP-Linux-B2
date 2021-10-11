@@ -4,9 +4,9 @@
 
 La définition du nom de domaine se trouve [ici](./definition.md#nom-de-domaine).
 
-Pour faire simple, on utilise des noms de domaine pour naviguer sur internet (ou encore envoyer des mails).
+Pour faire simple, on utilise des noms de domaines pour naviguer sur internet (ou encore envoyer des mails).
 
-En effet, il serait possible de naviguer sur internet via des adresses IP. Mais malheureusement, il serait difficile de les retenir, par conséquent il existe les noms de domaines qui permettent d'avoir un identifiant plus simple pour accéder à des sites web.
+En effet, il serait possible de naviguer sur Internet via des adresses IP. Mais malheureusement, il serait difficile de les retenir, par conséquent il existe les noms de domaines qui permettent d'avoir un identifiant plus simple pour accéder à des sites web.
 
 :floppy_disk: **Exemples :**
 
@@ -18,9 +18,9 @@ Si on `ping` le nom de domaine `www.google.fr`, on obtient :
 
 ![google](./img/dns/ping-google-4.jpg)
 
-Dans mon cas, l'adresse utilisé pour accéder au service de **Google**, c'est `142.250.201.163`.
+Dans mon cas, l'adresse utilisée pour accéder au service de **Google**, c'est `142.250.201.163`.
 
-On peut d'ailleur taper cette adresse IPv4 dans notre navigateur :
+On peut d'ailleurs taper cette adresse IPv4 dans notre navigateur :
 
 ![google](./img/dns/google-ip.jpg)
 
@@ -37,7 +37,7 @@ Le nom de domaine est décomposé comme suit :
 ![exemple-dn](./img/dns/domain-name.png)
 
  - **Sous-domaine :** C'est une partie facultative, qui permet de séparer un site web en plusieurs sections.
- - **Nom de domaine :** Elle est composé du **nom** ainsi que d'une extension. Cette partie est unique pour chaque site web, elle permet d'accéder à ce dernier.
+ - **Nom de domaine :** Elle est composée du **nom** ainsi que d'une extension. Cette partie est unique pour chaque site web, elle permet d'accéder à ce dernier.
  - **Nom :** C'est le **domaine de deuxième niveau** (SLD). Pas forcément unique, mais il est choisi par vous.
  - **Extension :** C'est le **domaine de premier niveau** (TLD). Ils sont prédéfinis (il en existe plus de 1000 différents, on peut potentiellement choisir celui que l'on veut)
 
@@ -62,13 +62,13 @@ Afin de configurer notre nom de domaine, on va devoir configurer 2 fichiers :
 - Le premier fichier à configurer est le fichier `/etc/resolv.conf` :
     C'est un fichier de configuration permettant de savoir quel serveur DNS il faut utiliser pour résoudre un nom de domaine.
 
-    Afin de rentrer dedans (et de ppuvoir le modifier) on fait la commande :
+    Afin de rentrer dedans (et de pouvoir le modifier) on fait la commande :
 
     ```sh
     sudo nano /etc/resolv.conf
     ```
 
-    On doit y ajouter le nom de domaine ainsi que son adresse IP conrrespondante :
+    On doit y ajouter le nom de domaine ainsi que son adresse IP correspondante :
 
     ![resolv](./img/dns/2021-09-28-160223.jpg)
 
@@ -90,9 +90,9 @@ Afin de configurer notre nom de domaine, on va devoir configurer 2 fichiers :
 
     ![hosts](./img/dns/2021-09-28-154058.jpg)
 
-    On peut d'ailleur voir dans ce fichier quelque chose d'intéressant :
+    On peut d'ailleurs voir dans ce fichier quelque chose d'intéressant :
 
-    Il faut savoir que l'**adresse IPv4** ``127.0.0.1`` est l'adresse de **boucle locale**. C'est une adresse qui ne fonctionne que sur **notre machine locale**. (Elle est la même pour toutes les machines).
+    Il faut savoir que l'**adresse IPv4** ``127.0.0.1`` est l'adresse de la **boucle locale**. C'est une adresse qui ne fonctionne que sur **notre machine locale**. (Elle est la même pour toutes les machines).
 
     Si on écrit **127.0.0.1** dans un navigateur on accédera à cette boucle locale (en fonction de son utilisation bien entendu). Et bien si on écrit `localhost`, on accédera à la même chose.
 
@@ -163,9 +163,9 @@ Et voilà :
 
 ## :chart_with_upwards_trend: Axes d'améliorations
 
-Pour avoir une solution plus pérénnisable, on aurait dû utiliser un logiciel se nommant **Bind9**.
+Pour avoir une solution plus pérennisable, on aurait dû utiliser un logiciel se nommant **Bind9**.
 
-Ce logiciel permet de configurer les services DNS. Il est surtout utiliser quand on doit gérer beaucoup de **nom de domaine**. 
+Ce logiciel permet de configurer les services DNS. Il est surtout utilisé quand on doit gérer beaucoup de **noms de domaines**. 
 
 Dans notre cas, il était donc suffisant de configurer "à la main" notre nom de domaine.
 

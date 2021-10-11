@@ -1,6 +1,6 @@
 # :handshake: Organisation d'un groupe de réflexion
 
-Nous nous sommes regroupés par groupe de 6, afin de s'entraider.
+Nous nous sommes regroupés par groupes de 6, afin de s'entraider.
 
 Nous avons donc commencé par nous organiser sur un Trello :
 

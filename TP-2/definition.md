@@ -85,3 +85,11 @@ Lien de la documentation source : https://fr.wikipedia.org/wiki/Pacemaker_(logic
 > Pacemaker est un logiciel Open source portant sur la gestion d'une grappe de machines pour un service de haute disponibilité. Il est chargé de démarrer, arrêter et superviser les ressources du cluster. Ce projet est supporté par les entreprises Red Hat, SUSE et Linbit. 
 
 **Pour résumer :** *C'est un logiciel permettant la gestion des ressources d'un cluster.*
+
+## Définition en plus
+
+### Cluster
+
+Un **cluster** est un groupement de serveurs sur un même réseau. 
+
+[<--- Conclusion](./conclusion.md) | Page 7 |

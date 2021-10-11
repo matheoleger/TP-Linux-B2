@@ -6,9 +6,9 @@
 
 Avant de commencer la création d'un site Web, il nous faut une VM Debian.
 
-Dans mon cas, j'ai réinstallé une Machine virtuelle **Debian 11**, pour des raisons de propeté du serveur.
+Dans mon cas, j'ai réinstallé une Machine virtuelle **Debian 11**, pour des raisons de propreté du serveur.
 
-Voici quelques images de la réinsallation de la VM :
+Voici quelques images de la réinstallation de la VM :
 
 - Choix de la langue :
     ![language](./img/installation-VM/2021-09-28-133352.jpg)
@@ -28,7 +28,7 @@ On peut configurer ceci dans les *Settings* de la machine virtuelle, dans la par
 
 ![adapter](./img/installation-VM/2021-10-01-092416.jpg)
 
-Ensuite, on doit regarder si on a **Internet** sur la machine virtuelle. Dans mon cas, j'avais directement accès à internet. En effet, la résolution DNS c'est fait automatiquement (sûrement grace à NetworkManager) et mon adresse IP était directement déjà dans le sous-réseaux
+Ensuite, on doit regarder si on a **Internet** sur la machine virtuelle. Dans mon cas, j'avais directement accès à internet. En effet, la résolution DNS, c'est fait automatiquement (sûrement grace à NetworkManager) et mon adresse IP était directement déjà dans le sous-réseau.
 
 Il se peut qu'il y ai des choses à configurer dans les paramètres de Debian :
 
@@ -63,7 +63,7 @@ Une fois ceci fait on pourra accéder à notre **Serveur Debian**, via la **mach
 
 Afin de créer un serveur Web, on va utiliser [Apache2](./definition.md#apache2).
 
-Pour ce faire, on va commencer par mettre à jour la liste des paquêts :
+Pour ce faire, on va commencer par mettre à jour la liste des paquets :
 
 ```sh
 sudo apt-get update && sudo apt-get upgrade
@@ -75,7 +75,7 @@ Une fois cette commande effectuée, on va donc pouvoir installer **Apache** :
 sudo apt-get install apache2
 ```
 
-Une fois l'installation réalisé, on peut aller dans le répertoire :
+Une fois l'installation réalisée, on peut aller dans le répertoire :
 
 ```sh
 cd /var/www/html
@@ -103,13 +103,13 @@ Maintenant, quand on va sur notre navigateur web, et qu'on tape l'adresse du ser
 
 ![site](./img/apache/2021-10-01-104042.jpg)
 
-La base du serveur Web est donc mis en place.
+La base du serveur Web est donc mise en place.
 
 ## :chart_with_upwards_trend: Axes d'améliorations
 
 Dans cette partie, afin de mettre en place le serveur le plus rapidement possible, nous n'avons pas configuré entièrement le serveur Apache.
 
-- On aurait donc pu améliorer la sécurité en configurant d'avantage le serveur **Apache**.
+- On aurait donc pu améliorer la sécurité en configurant davantage le serveur **Apache**.
 
     De plus, on aurait pu faire un système d'***hôtes virtuels*** (comme montré dans ce [cours](https://openclassrooms.com/fr/courses/1733551-gerez-votre-serveur-linux-et-ses-services/5236051-installez-le-serveur-web-le-plus-utilise-au-monde-apache#/id/r-5442839) de OpenClassrooms) afin d'avoir la possibilité de gérer **plusieurs sites web** sur une **seule machine**. D'ailleurs, nous allons le faire plus tard dans ce TP : [ici](./ssl.md#Mise-en-place-dun-Vhost-avec-Apache) (nous en avons besoin pour la **certification SSL**)
 
@@ -120,7 +120,7 @@ Dans cette partie, afin de mettre en place le serveur le plus rapidement possibl
     ```sh
     sudo apt install php libapache2-mod-php
     ```
-    Cette ligne va installer les modules nécessaire pour faire fonctionner **PHP** avec **Apache2**.
+    Cette ligne va installer les modules nécessaires pour faire fonctionner **PHP** avec **Apache2**.
 
 -------------
 

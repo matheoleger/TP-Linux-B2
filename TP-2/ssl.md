@@ -1,4 +1,4 @@
-# :pager: Mettre en place un certificat SSL sur le site web avec let's encrypt
+# :pager: Mettre en place un certificat SSL sur le site web
 
 ## Qu'est ce qu'un certificat SSL
 
@@ -6,19 +6,19 @@ La définition du certificat SSL se trouve [ici](./definition.md#certificat-ssl)
 
 Un **certificat SSL** utilise un **système de cryptographie**.
 
-Il utilise la cryptographie à clé publique, c'est-à-dire un système ce basant sur 2 clés, une privée et une publique :
+Il utilise la cryptographie à clé publique, c'est-à-dire un système se basant sur 2 clés, une privée et une publique :
 
 - La **clé publique** sert à **chiffrer** les données :
-    Le site web ce sert de la clé publique du serveur pour chiffrer les informations afin que personne (mise à part le serveur) ne puissent déchiffrer les données.
+    Le site web se sert de la clé publique du serveur pour chiffrer les informations afin que personne (mise à part le serveur) ne puisse déchiffrer les données.
 
 - La **clé privée** sert à **déchiffrer** les données :
-    Le serveur va quand à lui utiliser la clé privée afin de déchiffrer les données reçus par le/les site(s) web(s).
+    Le serveur va quant à lui utiliser la clé privée afin de déchiffrer les données reçues par le/les site(s) web(s).
 
 Ce certificat va nous permettre d'utiliser le protocole **HTTPS** (*"S"* pour *Secure*) au lieu de **HTTP**.
 
 Il y a plusieurs avantages à avoir ce certificat sur nos sites. Les 2 principales sont la **sécurité** et la **confiance**.
 
-Afin de disposer d'un certificat SSL, il faut utiliser une autorité de certification, on va ici voir 2 méthodes pour avoir ce certificats* :
+Afin de disposer d'un certificat SSL, il faut utiliser une autorité de certification, on va ici voir 2 méthodes pour avoir ce *certificat* :
 - avec certification par un **tiers de confiance**.
 - avec certification par nous même (**certificat auto-signé**).
 
@@ -131,27 +131,27 @@ Donc il faut commencer par créer le fichier `.conf` correspondant à notre site
     sudo systemctl reload apache2
     ```
 
-Si tout fonctionne, on devrait avoir notre page qui apparait dans le navigateur lorsque l'on écrit le nom de domaine.
+Si tout fonctionne, on devrait avoir notre page qui apparaît dans le navigateur lorsque l'on écrit le nom de domaine.
 
 ----
 
 ## Configuration d'un certificat SSL avec Let's Encrypt
 > :warning: Pour réaliser cette solution jusqu'au bout, il faut avoir un nom de domaine validé. En effet, **Let's Encrypt** est une autorité de certification. C'est-à-dire qu'elle va authentifier l'identité des correspondants. Si le nom de domaine n'est pas actif ou n'existe pas, alors Let's Encrypt ne donnera pas de validation pour le certificat. 
 
-Pour commencer, il faut installer l'outils `certbot` de [Let's Encrypt](./definition.md#lets-encrypt).
+Pour commencer, il faut installer l'outil `certbot` de [Let's Encrypt](./definition.md#lets-encrypt).
 
 > :bulb: Un programme de gestion de certificats en Python et sous licence Apache appelé ``certbot​`` s’installe sur le client (le serveur web d’un inscrit). - [Wikipédia](https://fr.wikipedia.org/wiki/Let%27s_Encrypt)
 
-Cette outils va permettre de faire toute la gestion du certificat, il valide le domaine et configure d'autres choses (HTTPS, renouvellement du certificat etc...).
+Cet outil va permettre de faire toute la gestion du certificat, il valide le domaine et configure d'autres choses (HTTPS, renouvellement du certificat, etc...).
 
 Notre nom de domaine étant privé, on ne pourra pas faire la manipulation jusqu'au bout. En effet, **Let's Encrypt** à besoin d'un nom de domaine valide afin de créer un certificat SSL. (J'expliquerais en temps voulu, ce qu'il aurait fallut faire afin de finir la tâche)
 
 Nous allons don commencer par télécharger le paquet `certbot`.
 
-De nombreux tutoriels sur internet, propose des manières différentes de télécharger `certbot`. Nous allons ici, utiliser la **méthode officielle** du [site de certbot](https://certbot.eff.org/lets-encrypt/debianbuster-apache.html) pour l'installer sur notre machine sous **Debian 11**.
+De nombreux tutoriels sur Internet, proposent des manières différentes de télécharger `certbot`. Nous allons ici, utiliser la **méthode officielle** du [site de certbot](https://certbot.eff.org/lets-encrypt/debianbuster-apache.html) pour l'installer sur notre machine sous **Debian 11**.
 
 
-Tout d'abord, nous devons installer le gestionnaire de paquêt [Snap](./definition.md#Snap). Pour ce faire, nous allons installer `snapd` via la commande :
+Tout d'abord, nous devons installer le gestionnaire de paquet [Snap](./definition.md#Snap). Pour ce faire, nous allons installer `snapd` via la commande :
 
 ```sh
 sudo apt-get install snapd
@@ -159,7 +159,7 @@ sudo apt-get install snapd
 
 ![snapd](./img/ssl/2021-10-03-220453.jpg)
 
-Une fois l'outils installé, il faut installé la dernière version du `core snap` (coeur du logiciel) pour avoir la dernière version de ``snapd`` :
+Une fois l'outil installé, il faut installer la dernière version du `core snap` (cœur du logiciel) pour avoir la dernière version de ``snapd`` :
 
 ```sh
 sudo snap install core
@@ -173,7 +173,7 @@ core 16-2.45.2 from Canonical✓ installed
 
 Si jamais il était déjà installé, on peut faire la commande `sudo snap refresh core` afin d'avoir la dernière version du logiciel.
 
-Avant de continuer, le site de `certbot` recommende de supprimer toutes versions, potentiellement existante, de `certbot` :
+Avant de continuer, le site de `certbot` recommande de supprimer toutes versions, potentiellement existantes, de `certbot` :
 
 ```sh
 sudo apt-get remove certbot
@@ -185,7 +185,7 @@ On peut maintenant passer à l'installation de `certbot` :
 sudo snap install --classic certbot
 ```
 
-Une fois installer, pour que le nom `certbot` soit reconnu comme une commande, il faut taper la ligne suivante dans le terminale :
+Une fois installer, pour que le nom `certbot` soit reconnu comme une commande, il faut taper la ligne suivante dans le terminal :
 
 ```sh
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
@@ -196,7 +196,7 @@ Avant de commencer à faire les commandes liés à `certbot`, on doit activer 2 
 - le module **SSL**.
 - le module **rewrite**.
 
-Pour vérifier s'ils sont déjà installé :
+Pour vérifier s'ils sont déjà installés :
 
 ```sh
 sudo apachectl -M
@@ -223,13 +223,11 @@ Il faut maintenant relancer les services Apache :
 sudo systemctl reload apache2
 ```
 
-Afin d'avoir un certificat il faut utiliser le système de **vhost** d'*Apache* : Nous allons donc devoir **reconfigurer** notre site web.
-
-
+Afin d'avoir un certificat, il faut utiliser le système de **vhost** d'*Apache* : Nous allons donc devoir **reconfigurer** notre site web.
 
 On peut maintenant utiliser `certbot` :
 
-C'est à ce moment là que l'on ne peut plus avancer si on n'a pas un nom de domaine valide.
+C'est à ce moment-là que l'on ne peut plus avancer si on n'a pas un nom de domaine valide.
 
 En effet, il faut que notre nom de domaine soit bien composé d'un **TLD** (Top level domain) et d'un **SLD** (Secondary Level domain). Et il faut qu'il soit **reconnu comme actif** (il faut l'avoir acheté).
 
@@ -246,7 +244,7 @@ Il y a plusieurs façon d'utiliser ``certbot`` :
 
     (Sur l'image ci-dessus, j'avais modifié le nom de domaine par inform.test afin de voir si cela fonctionnait quand on utilisait un nom de domaine composé d'un TLD et d'un SLD)
 
-    Une fois ceci fait, le cerificat devrait être créé et configuré automatiquement.
+    Une fois ceci fait, le certificat devrait être créé et configuré automatiquement.
 
 - Pour une configuration "**semi-automatique**" (on donne directement le nom de domaine) :
 
@@ -285,9 +283,9 @@ On peut donc faire un système CRON (voir [TP n°1](../TP-1/definition.md#cronta
 
 ## Configuration d'un certificat SSL auto-signé avec OpenSSL.
 
-> :link: La documentation m'ayant permit de faire cette partie : https://guide.ubuntu-fr.org/server/certificates-and-security.html
+> :link: La documentation m'ayant permis de faire cette partie : https://guide.ubuntu-fr.org/server/certificates-and-security.html
 
-Ici, le principe est d'avoir un **certificat SSL** dit auto-signé. Ce certificat nous permettra d'accéder au protocole HTTPS. En revanche, il se peut qu'il faut, pour certains navigateur, préciser que ce site est sécurisé.
+Ici, le principe est d'avoir un **certificat SSL** dit auto-signé. Ce certificat nous permettra d'accéder au protocole HTTPS. En revanche, il se peut qu'il faille, pour certains navigateurs, préciser que ce site est sécurisé.
 
 Dans un cadre de production, il sera préférable d'utiliser une **CA** (Certificate Authority) pour valider le **certificat**.
 
@@ -313,7 +311,7 @@ Comme vu ci-dessus, on vient de générer une clé, voici le détail de la comma
 
 >:bulb: L'Algorithme de chiffrement **Triple DES**, demande une phrase de passe d'au minimum **4 caractères**.
 
-On génère à présent la clé non sécurisé :
+On génère à présent la clé non sécurisée :
 
 ```sh
 openssl rsa -in inform.test.key -out inform.test.key.insecure
@@ -328,7 +326,7 @@ mv inform.test.key inform.test.key.secure
 mv inform.test.key.insecure inform.test.key
 ```
 
-Maintenant, notre clé sera celle non-sécurisée.
+Maintenant, notre clé sera celle non sécurisée.
 
 On peut donc à présent, générer notre **CSR** (demande de signature de certificat) :
 
@@ -338,7 +336,7 @@ openssl req -new -key inform.test.key -out inform.test.csr
 
 Voici les détails de la commande ci-dessus :
 - `req -new` : pour générer une **CSR**.
-- `-key inform.test.key` : On sépécifie la clé utilisée.
+- `-key inform.test.key` : On spécifie la clé utilisée.
 - `-out inform.test.csr` : On spécifie le fichier de sortie.
 
 Voici une image du résumé des commandes ci-dessus :
@@ -356,13 +354,13 @@ openssl x509 -req -days 365 -in inform.test.csr -signkey inform.test.key -out in
 Voici que que fait la commande :
 
 - ``x509`` : **X.509** est une **norme** pour les **certificats**.
-- `-req` : Pour créer le cerificat *auto-signé*.
+- `-req` : Pour créer le certificat *auto-signé*.
 - `-days 365` : Le certificat est valable 365 jours.
 - `-in inform.test.csr` : Va chercher le fichier de **demande de signature de certificat**.
 - `-signkey inform.test.key` : On utilise la clé générée précédemment.
 - `-out inform.test.crt` : Fichier dans lequel on va mettre ce certificat.
 
-Maintenant que l'on a généré notre propre certificat auto-signé, il ne reste plus qu'à l'appliquer. Pour ce faire, on va placer dans les dossiers par défaut de **SSL** (afin de retrouver notre certificats plus rapidement) :
+Maintenant que l'on a généré notre propre certificat auto-signé, il ne reste plus qu'à l'appliquer. Pour ce faire, on va placer dans les dossiers par défaut de **SSL** (afin de retrouver notre certificat plus rapidement) :
 
 ```sh
 sudo cp inform.test.crt /etc/ssl/certs
@@ -402,7 +400,7 @@ On redémarre le service Apache :
 sudo systemctl restart apache2
 ```
 
-Et normalement si l'on tape l'adresse dans le navigateur, on obtient :
+Et normalement si on tape l'adresse dans le navigateur, on obtient :
 
 ![site](./img/ssl/openssl/test126271/2021-10-10-131157.jpg)
 
@@ -412,11 +410,11 @@ On peut voir qu'on est bien en **https** :
 
 On remarque toutefois, une vigilance de notre navigateur sur la confiance de notre site. En effet, on utilise un certificat **auto-signé**. On pourrait donc le faire signer par une **CA**.
 
-Dans cette partie du TP, j'ai mit en place une autorité de certification. Malheureusement par manque de temps, je ne peux pas le détailler ici.
+Dans cette partie du TP, j'ai mis en place une autorité de certification. Malheureusement par manque de temps, je ne peux pas le détailler ici.
 
-### Voici en grande ligne comment il aurait fallut faire :
+### Voici en grande ligne comment il aurait fallu faire :
 
-On commence par créer les répertoires nécessaire :
+On commence par créer les répertoires nécessaires :
 
 ```sh
 sudo mkdir /etc/ssl/CA
@@ -443,7 +441,7 @@ serial          = $dir/CA/serial        # The current serial number
 private_key     = $dir/private/cakey.pem# The private key
 ```
 
-Cela permettra de configurer plusieurs certificat, plus rapidement.
+Cela permettra de configurer plusieurs certificats, plus rapidement.
 
 Ensuite, on génère le **certificat lié à l'AC**, qui sera le **certficat racine** (*root certificate*) :
 
@@ -465,14 +463,14 @@ sudo openssl ca -in <nom de la CSR> -config /etc/ssl/openssl.cnf
 ```
 (Il faut avoir généré une CSR)
 
-On peut maintenant récupèrer le **certificat** dans le fichier **01.pem** (pour les prochains, se sera 02.pem, 03.pem etc...).
+On peut maintenant récupérer le **certificat** dans le fichier **01.pem** (pour les prochains, ce sera 02.pem, 03.pem etc...).
 
 On copie le contenu de ce fichier (allant de BEGIN CERTIFICATE à END CERTIFICATE) et on le place dans un fichier `.crt` portant le nom que l'on veut.
 
 ![ca](./img/ssl/openssl/test126271/2021-10-04-200543.jpg)
 
 
-Voici donc comment on créé notre propre certificats.
+Voici donc comment on a créé notre propre certificat.
 
 --------------------------------------------------------
 
@@ -483,7 +481,7 @@ Dans le cas d'un test professionnel, il faudrait essayer avec un nom de domaine 
  Voici les commentaires que l'on peut faire, si notre but était de faire une solution dans un environnement professionnel :
 - L'utilisation d'un certificat auto-signé est peu recommandé
 - On peut créer notre propre **CA** quand on a plusieurs certificats à signer.
-- On peut utiliser un certificat signer par une vraie **CA**, ce qui fait que nos sites seront reconnu comme sécurisé.
+- On peut utiliser un certificat signé par une vraie **CA**, ce qui fait que nos sites seront reconnus comme sécurisés.
 
 ----
 
